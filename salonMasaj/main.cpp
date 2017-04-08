@@ -2,9 +2,8 @@
 
 using namespace std;
 
-
 int main()
 {
-	cout << "Proba\n";
+	cout << "Ceva\n";
 	return 0;
 }
