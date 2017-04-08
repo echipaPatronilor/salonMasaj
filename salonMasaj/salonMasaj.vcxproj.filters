@@ -19,4 +19,33 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="angajat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bodyguard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cleint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="femeieservici.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="maseuze.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patron.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="persoana.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="personbuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

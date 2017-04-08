@@ -144,6 +144,17 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="angajat.h" />
+    <ClInclude Include="bodyguard.h" />
+    <ClInclude Include="cleint.h" />
+    <ClInclude Include="femeieservici.h" />
+    <ClInclude Include="maseuze.h" />
+    <ClInclude Include="patron.h" />
+    <ClInclude Include="persoana.h" />
+    <ClInclude Include="personbuilder.h" />
+    <ClInclude Include="scriptmanager.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
