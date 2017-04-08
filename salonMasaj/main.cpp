@@ -1,12 +1,7 @@
-#include<iostream>
+#include "utils.h"
 #include "persoana.h"
 #include "patron.h"
 using namespace std;
-
-void wait() 
-{
-	system("pause");
-}
 
 int main()
 {

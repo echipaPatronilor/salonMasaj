@@ -155,6 +155,7 @@
     <ClInclude Include="persoana.h" />
     <ClInclude Include="personbuilder.h" />
     <ClInclude Include="scriptmanager.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="actionScript.txt" />
