@@ -1,6 +1,7 @@
 #ifndef _ENUMS_H_
 #define _ENUMS_H_
 
+const int __SIZEOF_TIP_TRUP = 4;
 enum TIP_TRUP
 {
 	TRUP_ZVELT,
@@ -8,7 +9,6 @@ enum TIP_TRUP
 	TRUP_GRAS,
 	TRUP_GARBOVIT
 };
-
 std::ostream& operator<<(std::ostream& out, const TIP_TRUP value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
@@ -22,12 +22,13 @@ std::ostream& operator<<(std::ostream& out, const TIP_TRUP value) {
 	return out << s;
 }
 
+
+const int __SIZEOF_TIP_POTENTA_FINANCIARA = 2;
 enum TIP_POTENTA_FINANCIARA
 {
 	POTENTA_FINANCIARA_CU_BANI,
 	POTENTA_FINANCIARA_RUPT_IN_FUND
 };
-
 std::ostream& operator<<(std::ostream& out, const TIP_POTENTA_FINANCIARA value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
@@ -39,6 +40,8 @@ std::ostream& operator<<(std::ostream& out, const TIP_POTENTA_FINANCIARA value) 
 	return out << s;
 }
 
+
+const int __SIZEOF_TIP_COMPORTAMENT = 6;
 enum TIP_COMPORTAMENT
 {
 	COMPORTAMENT_LINISTIT,
@@ -48,7 +51,6 @@ enum TIP_COMPORTAMENT
 	COMPORTAMENT_DROGAT,
 	COMPORTAMENT_DUBIOS
 };
-
 std::ostream& operator<<(std::ostream& out, const enum TIP_COMPORTAMENT value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
@@ -64,6 +66,8 @@ std::ostream& operator<<(std::ostream& out, const enum TIP_COMPORTAMENT value) {
 	return out << s;
 }
 
+
+const int __SIZEOF_CULOARE_PAR = 4;
 enum CULOARE_PAR
 {
 	PAR_BLOND,
@@ -71,7 +75,6 @@ enum CULOARE_PAR
 	PAR_ROSCAT,
 	PAR_NEGRU
 };
-
 std::ostream& operator<<(std::ostream& out, const enum CULOARE_PAR value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
@@ -85,6 +88,8 @@ std::ostream& operator<<(std::ostream& out, const enum CULOARE_PAR value) {
 	return out << s;
 }
 
+
+const int __SIZEOF_LUNGIME_PAR = 4;
 enum LUNGIME_PAR
 {
 	PAR_LUNG,
@@ -92,8 +97,6 @@ enum LUNGIME_PAR
 	PAR_SCURT,
 	PAR_LIPSA
 };
-
-
 std::ostream& operator<<(std::ostream& out, const enum LUNGIME_PAR value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
@@ -107,6 +110,8 @@ std::ostream& operator<<(std::ostream& out, const enum LUNGIME_PAR value) {
 	return out << s;
 }
 
+
+const int __SIZEOF_TIP_SEX = 4;
 enum TIP_SEX
 {
 	SEX_MASCULIN,
@@ -114,7 +119,6 @@ enum TIP_SEX
 	SEX_NEDETERMINAT,
 	SEX_ELICOPTER_APACHE
 };
-
 std::ostream& operator<<(std::ostream& out, const enum TIP_SEX value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
@@ -128,6 +132,8 @@ std::ostream& operator<<(std::ostream& out, const enum TIP_SEX value) {
 	return out << s;
 }
 
+
+const int __SIZEOF_TIP_PIELE = 4;
 enum TIP_PIELE
 {
 	PIELE_ALBA,
@@ -135,7 +141,6 @@ enum TIP_PIELE
 	PIELE_NEAGRA,
 	PIELE_GALBENA
 };
-
 std::ostream& operator<<(std::ostream& out, const enum TIP_PIELE value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
@@ -149,6 +154,8 @@ std::ostream& operator<<(std::ostream& out, const enum TIP_PIELE value) {
 	return out << s;
 }
 
+
+const int __SIZEOF_TIP_RASA = 7;
 enum TIP_RASA
 {
 	RASA_EUROPEANA,
@@ -159,7 +166,6 @@ enum TIP_RASA
 	RASA_AUSTRALIANA,
 	RASA_RROMANI
 };
-
 std::ostream& operator<<(std::ostream& out, const enum TIP_RASA value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
@@ -176,6 +182,8 @@ std::ostream& operator<<(std::ostream& out, const enum TIP_RASA value) {
 	return out << s;
 }
 
+
+const int __SIZEOF_TIP_PERSOANA = 4;
 enum TIP_PERSOANA
 {
 	PERSOANA_MASEUZA,
@@ -183,7 +191,6 @@ enum TIP_PERSOANA
 	PERSOANA_BODYGUARD,
 	PERSOANA_FEMEIESERVICI
 };
-
 std::ostream& operator<<(std::ostream& out, const enum TIP_PERSOANA value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
@@ -196,5 +203,6 @@ std::ostream& operator<<(std::ostream& out, const enum TIP_PERSOANA value) {
 #undef PROCESS_VAL
 	return out << s;
 }
+
 
 #endif // !_ENUMS_H_
