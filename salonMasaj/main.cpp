@@ -5,17 +5,19 @@ using namespace std;
 
 int main()
 {
+	Utils utilities;
+
 	Patron patron;
 	MaseuzaBuilder racolatorMaseuze;
 
 	cout << "Racolam maseuza\n";
 	patron.setBuilder(&racolatorMaseuze);
-	Persoana * pers = patron.racoleaza();
+	Persoana* pers = patron.racoleaza();
 
 	cout << "Am racolat maseuza cu urmatoarele specificatii:\n";
 	pers->specificatii();
 
-	wait();
+	utilities.wait();
 
 	return 0;
 }

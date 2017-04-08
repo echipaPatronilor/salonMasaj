@@ -3,12 +3,23 @@
 
 #include <iostream>
 
-void wait()
+class Utils 
+{
+ 
+ public:
+
+	 static void wait();
+	 static void clearscreen();
+
+};
+
+
+void Utils::wait()
 {
 	system("pause");
 }
 
-void clearscreen()
+void Utils::clearscreen()
 {
 	system("cls");
 }
