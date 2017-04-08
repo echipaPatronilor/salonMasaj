@@ -3,6 +3,7 @@
 #include <iostream>
 #include "enums.h"
 
+
 class Persoana
 {
 public:
@@ -12,9 +13,9 @@ public:
 
 	void specificatii() const
 	{
-		std::cout << "trup:" << trup << "\n";
-		std::cout << "potenta financiara:" << potentaFinanciara << "\n";
-		std::cout << "comportament:" << comportament << "\n";
+		std::cout << "trup:  " << trup << "\n";
+		std::cout << "potenta financiara:  " << potentaFinanciara << "\n";
+		std::cout << "comportament:  " << comportament << "\n";
 	}
 };
 
