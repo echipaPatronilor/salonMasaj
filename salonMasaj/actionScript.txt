@@ -1,0 +1,13 @@
+<clock> <entity> <command>
+
+
+clock = non negative integer
+
+entities = maseuza, patron, bodyguard, femeieservici, client
+
+commands = for all -> "spawn"
+			masueza -> "maseaza <client> <tip_masaj>"
+			patrol -> "angajeaza", "concediaza"
+			client -> "vine", "pleaca", "comanda_masaj <tip>", "plateste", "face_scandal", "actiune_neprevazuta <maseuza>"
+			bodyguard -> "bate", "scoate_afara", "verifica"
+			femeieservici -> "curata"
