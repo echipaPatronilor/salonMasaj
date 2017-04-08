@@ -3,6 +3,11 @@
 #include "patron.h"
 using namespace std;
 
+void wait() 
+{
+	system("pause");
+}
+
 int main()
 {
 	Patron patron;
@@ -15,6 +20,7 @@ int main()
 	cout << "Am racolat maseuza cu urmatoarele specificatii:\n";
 	pers->specificatii();
 
-	cin.get();
+	wait();
+
 	return 0;
 }
