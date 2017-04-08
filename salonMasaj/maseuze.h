@@ -3,16 +3,11 @@
 
 #include "utils.h"
 
-class Maseuza 
-{
-
-};
-
 class MaseuzaBuilder : public PersonBuilder
 {
 public:
 
-	string getName()
+	std::string getName()
 	{
 		return "Mitza Biciclista";
 	}

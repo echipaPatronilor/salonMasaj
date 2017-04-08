@@ -8,13 +8,15 @@ class Persoana
 {
 
 private:
-	string name;
+	std::string name;
 	unsigned int age;
 	TIP_SEX sex;
 	TIP_RASA race;
 	TIP_PIELE skinType;
 	TIP_TRUP bodyType;
 	std::pair<CULOARE_PAR, LUNGIME_PAR> hairType;
+
+	friend class PersonFactory;
 
 public:
 	TIP_COMPORTAMENT comportament;
@@ -24,7 +26,7 @@ public:
 
 	void specificatii() const
 	{
-		std::cout << nume << "\n";
+		std::cout << name << "\n";
 		std::cout << "trup:  " << trup << "\n";
 		std::cout << "potenta financiara:  " << potentaFinanciara << "\n";
 		std::cout << "comportament:  " << comportament << "\n";
@@ -59,9 +61,13 @@ public:
 			break;
 		}
 
-		persoana->comportament = builder->getComportament();
-		persoana->potentaFinanciara = builder->getPotenta();
-		persoana->trup = builder->getTrup();
+		persoana->name = builder->getName();
+		persoana->age = builder->getAge();
+		persoana->sex = builder->getSex();
+		persoana->race = builder->getRace();
+		persoana->skinType = builder->getSkinType();
+		persoana->bodyType = builder->getBodyType();
+		persoana->hairType = builder->getHairType();
 
 		persoana->tip = tipPersoana;
 

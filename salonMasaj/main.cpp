@@ -15,7 +15,6 @@ int main()
 	cout << "Am racolat " << pers->tip << " cu urmatoarele specificatii:\n";
 	pers->specificatii();
 
-	utilities.wait();
-
+	Utils::wait();
 	return 0;
 }

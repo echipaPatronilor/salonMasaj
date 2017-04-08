@@ -7,8 +7,7 @@
 class PersonBuilder
 {
 public:
-
-	virtual string getName() = 0;
+	virtual std::string getName() = 0;
 	virtual int getAge() = 0;
 	virtual TIP_SEX getSex() = 0;
 	virtual TIP_RASA getRace() = 0;
@@ -18,8 +17,6 @@ public:
 
 	/*virtual TIP_COMPORTAMENT getComportament() = 0;
 	virtual TIP_POTENTA_FINANCIARA getPotenta() = 0;*/
-	
-	
 };
 
 
