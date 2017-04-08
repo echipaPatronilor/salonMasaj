@@ -1,7 +1,7 @@
 #ifndef _PERSOANA_H_
 #define _PERSOANA_H_
+
 #include <iostream>
-#include "enums.h"
 #include "personbuilder.h"
 
 class Persoana
@@ -30,48 +30,6 @@ public:
 		std::cout << "trup:  " << trup << "\n";
 		std::cout << "potenta financiara:  " << potentaFinanciara << "\n";
 		std::cout << "comportament:  " << comportament << "\n";
-	}
-};
-
-class Maseuze : public Persoana
-{
-
-};
-
-class PersonFactory
-{
-	PersonBuilder * builder;
-public:
-	void setBuilder(PersonBuilder* newBuilder)
-	{
-		builder = newBuilder;
-	}
-
-	Persoana * getPerson(TIP_PERSOANA tipPersoana) const
-	{
-		Persoana * persoana = nullptr;
-
-		switch (tipPersoana)
-		{
-		case PERSOANA_MASEUZA:
-			persoana = new Maseuze();
-			break;
-		default:
-			persoana = nullptr;
-			break;
-		}
-
-		persoana->name = builder->getName();
-		persoana->age = builder->getAge();
-		persoana->sex = builder->getSex();
-		persoana->race = builder->getRace();
-		persoana->skinType = builder->getSkinType();
-		persoana->bodyType = builder->getBodyType();
-		persoana->hairType = builder->getHairType();
-
-		persoana->tip = tipPersoana;
-
-		return persoana;
 	}
 };
 

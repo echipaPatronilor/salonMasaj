@@ -1,6 +1,7 @@
 #ifndef _PATRON_H_
 #define _PATRON_H_
-#include "persoana.h"
+
+#include "personfactory.h"
 #include "maseuze.h"
 
 class Patron
