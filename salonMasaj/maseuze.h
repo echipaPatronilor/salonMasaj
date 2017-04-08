@@ -30,12 +30,12 @@ public:
 
 	TIP_RASA getRace()
 	{
-		return RASA_EUROPEANA;
+		return (TIP_RASA)Utils::random(0, 6);
 	}
 
 	TIP_PIELE getSkinType()
 	{
-		return PIELE_ALBA;
+		return (TIP_PIELE)Utils::random(0, 3);
 	}
 
 	TIP_TRUP getBodyType()
@@ -45,7 +45,7 @@ public:
 
 	std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType()
 	{
-		return std::make_pair(PAR_BLOND, PAR_LUNG);
+		return std::make_pair((CULOARE_PAR)Utils::random(0, 3), (LUNGIME_PAR)Utils::random(0, 3));
 	}
 };
 
