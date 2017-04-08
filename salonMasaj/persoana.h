@@ -6,8 +6,9 @@
 
 class Persoana
 {
-
 private:
+	friend class PersonFactory;
+	
 	std::string name;
 	unsigned int age;
 	TIP_SEX sex;
@@ -16,21 +17,20 @@ private:
 	TIP_TRUP bodyType;
 	std::pair<CULOARE_PAR, LUNGIME_PAR> hairType;
 
-	friend class PersonFactory;
-
 public:
 	TIP_COMPORTAMENT comportament;
 	TIP_POTENTA_FINANCIARA potentaFinanciara;
 	TIP_TRUP trup;
 	TIP_PERSOANA tip;
 
-	void specificatii() const
-	{
-		std::cout << name << "\n";
-		std::cout << "trup:  " << trup << "\n";
-		std::cout << "potenta financiara:  " << potentaFinanciara << "\n";
-		std::cout << "comportament:  " << comportament << "\n";
-	}
+	void specificatii() const;
 };
 
+inline void Persoana::specificatii() const
+{
+	std::cout << name << "\n";
+	std::cout << "trup:  " << trup << "\n";
+	std::cout << "potenta financiara:  " << potentaFinanciara << "\n";
+	std::cout << "comportament:  " << comportament << "\n";
+}
 #endif // !_PERSOANA_H_

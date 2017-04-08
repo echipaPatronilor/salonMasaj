@@ -6,28 +6,25 @@
 
 class Patron
 {
+private:
 	PersonFactory factory;
-	MaseuzaBuilder racolatorMaseuze;
+	MaseuzaBuilder racolatorMaseuze_adica_peste;
 
 public:
-	Patron()
-	{
-
-	}
-
-	Persoana * racoleaza(TIP_PERSOANA tipPersoana)
-	{
-		switch (tipPersoana)
-		{
-		case PERSOANA_MASEUZA:
-			factory.setBuilder(&racolatorMaseuze);
-			break;
-		default:
-			break;
-		}
-
-		return factory.getPerson(tipPersoana);
-	}
+	Persoana* racoleaza(TIP_PERSOANA tipPersoana);
 };
 
+inline Persoana* Patron::racoleaza(TIP_PERSOANA tipPersoana)
+{
+	switch (tipPersoana)
+	{
+	case PERSOANA_MASEUZA:
+		factory.setBuilder(&racolatorMaseuze_adica_peste);
+		break;
+	default:
+		break;
+	}
+
+	return factory.getPerson(tipPersoana);
+}
 #endif // !_PATRON_H_
