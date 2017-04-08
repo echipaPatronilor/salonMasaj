@@ -5,23 +5,27 @@
 
 class Patron
 {
-	PersonBuilder* builder;
+	PersonFactory factory;
+	MaseuzaBuilder racolatorMaseuze;
 
 public:
-	void setBuilder(PersonBuilder* newBuilder)
+	Patron()
 	{
-		builder = newBuilder;
+
 	}
 
-	Persoana* racoleaza() const
+	Persoana * racoleaza(TIP_PERSOANA tipPersoana)
 	{
-		Persoana* persoana = new Persoana();
+		switch (tipPersoana)
+		{
+		case PERSOANA_MASEUZA:
+			factory.setBuilder(&racolatorMaseuze);
+			break;
+		default:
+			break;
+		}
 
-		persoana->comportament = builder->getComportament();
-		persoana->potentaFinanciara = builder->getPotenta();
-		persoana->trup = builder->getTrup();
-
-		return persoana;
+		return factory.getPerson(tipPersoana);
 	}
 };
 

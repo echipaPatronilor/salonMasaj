@@ -5,7 +5,7 @@ enum TIP_TRUP
 {
 	TRUP_ZVELT,
 	TRUP_ATLETIC,
-	TRUP_MOSNEAG
+	TRUP_GARBOVIT
 };
 
 enum TIP_POTENTA_FINANCIARA
@@ -20,13 +20,21 @@ enum TIP_COMPORTAMENT
 	COMPORTAMENT_DUBIOS
 };
 
+enum TIP_PERSOANA
+{
+	PERSOANA_MASEUZA,
+	PERSOANA_CLIENT,
+	PERSOANA_BODYGUARD,
+	PERSOANA_FEMEIESERVICI
+};
+
 std::ostream& operator<<(std::ostream& out, const TIP_TRUP value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
 	switch (value) {
 		PROCESS_VAL(TRUP_ZVELT);
 		PROCESS_VAL(TRUP_ATLETIC);
-		PROCESS_VAL(TRUP_MOSNEAG);
+		PROCESS_VAL(TRUP_GARBOVIT);
 	}
 #undef PROCESS_VAL
 	return out << s;
@@ -49,6 +57,19 @@ std::ostream& operator<<(std::ostream& out, const TIP_COMPORTAMENT value) {
 	switch (value) {
 		PROCESS_VAL(COMPORTAMENT_NEDUBIOS);
 		PROCESS_VAL(COMPORTAMENT_DUBIOS);
+	}
+#undef PROCESS_VAL
+	return out << s;
+}
+
+std::ostream& operator<<(std::ostream& out, const TIP_PERSOANA value) {
+	const char* s = 0;
+#define PROCESS_VAL(p) case(p): s = #p; break;
+	switch (value) {
+		PROCESS_VAL(PERSOANA_MASEUZA);
+		PROCESS_VAL(PERSOANA_CLIENT);
+		PROCESS_VAL(PERSOANA_BODYGUARD);
+		PROCESS_VAL(PERSOANA_FEMEIESERVICI);
 	}
 #undef PROCESS_VAL
 	return out << s;
