@@ -3,8 +3,9 @@
 
 #include "utils.h"
 #include "persoana.h"
+#include "angajat.h"
 
-class Maseuza : public Persoana
+class Maseuza : public Persoana, public Angajat
 {
 
 };
