@@ -5,7 +5,6 @@ using namespace std;
 
 int main()
 {
-
 	Patron patron;
 
 	cout << "Racolam maseuza\n";

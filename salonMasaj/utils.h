@@ -7,28 +7,26 @@
 
 class Utils 
 {
- 
  public:
-
 	 static void wait();
 	 static void clearscreen();
 	 static int random(int, int);
 };
 
 
-void Utils::wait()
+inline void Utils::wait()
 {
 	system("pause");
 }
 
-void Utils::clearscreen()
+inline void Utils::clearscreen()
 {
 	system("cls");
 }
 
-int Utils::random(int lower, int upper)
+inline int Utils::random(int lower, int upper)
 {
-	srand(time(NULL));
+	srand(time(nullptr));
 	return (rand() % (upper - lower + 1)) + lower;
 }
 

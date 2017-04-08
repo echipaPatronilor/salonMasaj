@@ -12,38 +12,37 @@ class Maseuza : public Persoana
 class MaseuzaBuilder : public PersonBuilder
 {
 public:
-
-	std::string getName()
+	std::string getName() override
 	{
 		return "Mitza Biciclista";
 	}
 
-	int getAge()
+	int getAge() override
 	{
 		return Utils::random(18, 60);
 	}
 
-	TIP_SEX getSex()
+	TIP_SEX getSex() override
 	{
 		return SEX_FEMININ;
 	}
 
-	TIP_RASA getRace()
+	TIP_RASA getRace() override
 	{
 		return RASA_EUROPEANA;
 	}
 
-	TIP_PIELE getSkinType()
+	TIP_PIELE getSkinType() override
 	{
 		return PIELE_ALBA;
 	}
 
-	TIP_TRUP getBodyType()
+	TIP_TRUP getBodyType() override
 	{
 		return TRUP_ZVELT;
 	}
 
-	std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType()
+	std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType() override
 	{
 		return std::make_pair(PAR_BLOND, PAR_LUNG);
 	}
