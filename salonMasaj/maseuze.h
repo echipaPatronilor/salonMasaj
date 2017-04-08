@@ -30,12 +30,12 @@ public:
 
 	TIP_RASA getRace() override
 	{
-		return (TIP_RASA)Utils::random(0, 6);
+		return static_cast<TIP_RASA>(Utils::random(0, __SIZEOF_TIP_RASA));
 	}
 
 	TIP_PIELE getSkinType() override
 	{
-		return (TIP_PIELE)Utils::random(0, 3);
+		return static_cast<TIP_PIELE>(Utils::random(0, __SIZEOF_TIP_PIELE));
 	}
 
 	TIP_TRUP getBodyType() override
@@ -45,7 +45,9 @@ public:
 
 	std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType() override
 	{
-		return std::make_pair((CULOARE_PAR)Utils::random(0, 3), (LUNGIME_PAR)Utils::random(0, 3));
+		return std::make_pair(
+			static_cast<CULOARE_PAR>(Utils::random(0, __SIZEOF_CULOARE_PAR)),
+			static_cast<LUNGIME_PAR>(Utils::random(0, __SIZEOF_LUNGIME_PAR)));
 	}
 };
 
