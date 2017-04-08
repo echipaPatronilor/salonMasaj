@@ -154,6 +154,7 @@
     <ClInclude Include="patron.h" />
     <ClInclude Include="persoana.h" />
     <ClInclude Include="personbuilder.h" />
+    <ClInclude Include="personfactory.h" />
     <ClInclude Include="scriptmanager.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
