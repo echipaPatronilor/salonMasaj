@@ -5,7 +5,6 @@ using namespace std;
 
 int main()
 {
-	Utils utilities;
 
 	Patron patron;
 	MaseuzaBuilder racolatorMaseuze;
@@ -17,7 +16,7 @@ int main()
 	cout << "Am racolat maseuza cu urmatoarele specificatii:\n";
 	pers->specificatii();
 
-	utilities.wait();
+	Utils::wait();
 
 	return 0;
 }

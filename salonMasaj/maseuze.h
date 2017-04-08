@@ -1,20 +1,50 @@
 #ifndef _MASEUZE_H_
 #define _MASEUZE_H_
 
+#include "utils.h"
+
+class Maseuza 
+{
+
+};
+
 class MaseuzaBuilder : public PersonBuilder
 {
 public:
-	TIP_COMPORTAMENT getComportament() override
+
+	string getName()
 	{
-		return COMPORTAMENT_NEDUBIOS;
+		return "Mitza Biciclista";
 	}
-	TIP_POTENTA_FINANCIARA getPotenta() override
+
+	int getAge()
 	{
-		return POTENTA_FINANCIARA_RUPT_IN_FUND;
+		return Utils::random(18, 60);
 	}
-	TIP_TRUP getTrup() override
+
+	TIP_SEX getSex()
+	{
+		return SEX_FEMININ;
+	}
+
+	TIP_RASA getRace()
+	{
+		return RASA_EUROPEANA;
+	}
+
+	TIP_PIELE getSkinType()
+	{
+		return PIELE_ALBA;
+	}
+
+	TIP_TRUP getBodyType()
 	{
 		return TRUP_ZVELT;
+	}
+
+	std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType()
+	{
+		return std::make_pair(PAR_BLOND, PAR_LUNG);
 	}
 };
 

@@ -2,6 +2,8 @@
 #define _UTILS_H_
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 class Utils 
 {
@@ -10,7 +12,7 @@ class Utils
 
 	 static void wait();
 	 static void clearscreen();
-
+	 static int random(int, int);
 };
 
 
@@ -22,6 +24,12 @@ void Utils::wait()
 void Utils::clearscreen()
 {
 	system("cls");
+}
+
+int Utils::random(int lower, int upper)
+{
+	srand(time(NULL));
+	return (rand() % (upper - lower + 1)) + lower;
 }
 
 #endif // !_UTILS_H_
