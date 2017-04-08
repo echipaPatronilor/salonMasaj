@@ -10,21 +10,5 @@ public:
 	virtual TIP_TRUP getTrup() = 0;
 };
 
-class MaseuzaBuilder : public PersonBuilder
-{
-public:
-	TIP_COMPORTAMENT getComportament() override
-	{
-		return COMPORTAMENT_NEDUBIOS;
-	}
-	TIP_POTENTA_FINANCIARA getPotenta() override
-	{
-		return POTENTA_FINANCIARA_RUPT_IN_FUND;
-	}
-	TIP_TRUP getTrup() override
-	{
-		return TRUP_ZVELT;
-	}
-};
 
 #endif // !_PERSONBUILDER_H_
