@@ -11,7 +11,7 @@ int main()
 	
 	Persoana* pers = patron.racoleaza(PERSOANA_MASEUZA);
 
-	cout << "Am racolat " << pers->tip << " cu urmatoarele specificatii:\n";
+	cout << "Am racolat " << pers->getTipPersoana() << " cu urmatoarele specificatii:\n";
 	pers->specificatii();
 
 	Utils::wait();
