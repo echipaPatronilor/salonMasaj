@@ -2,10 +2,9 @@
 #define _MASEUZE_H_
 
 #include "utils.h"
-#include "persoana.h"
 #include "angajat.h"
 
-class Maseuza : public Persoana, public Angajat
+class Maseuza : public Angajat
 {
 
 };

@@ -1,10 +1,9 @@
 #ifndef _FEMEIESERVICI_H_
 #define _FEMEIESERVICI_H_
 
-#include "persoana.h"
 #include "angajat.h"
 
-class FemeieServici : public Persoana, public Angajat
+class FemeieServici : public Angajat
 {
 
  public:

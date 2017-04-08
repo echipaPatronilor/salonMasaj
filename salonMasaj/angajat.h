@@ -1,7 +1,9 @@
 #ifndef _ANGAJAT_H_
 #define _ANGAJAT_H_
 
-class Angajat 
+#include "persoana.h"
+
+class Angajat : public Persoana
 {
  private:
 	 unsigned int salariu;
