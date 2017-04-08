@@ -148,6 +148,7 @@
     <ClInclude Include="angajat.h" />
     <ClInclude Include="bodyguard.h" />
     <ClInclude Include="client.h" />
+    <ClInclude Include="enums.h" />
     <ClInclude Include="femeieservici.h" />
     <ClInclude Include="maseuze.h" />
     <ClInclude Include="patron.h" />
