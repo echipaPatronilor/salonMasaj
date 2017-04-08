@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+
 	Patron patron;
 
 	cout << "Racolam maseuza\n";
@@ -14,6 +15,7 @@ int main()
 	cout << "Am racolat " << pers->tip << " cu urmatoarele specificatii:\n";
 	pers->specificatii();
 
-	Utils::wait();
+	utilities.wait();
+
 	return 0;
 }

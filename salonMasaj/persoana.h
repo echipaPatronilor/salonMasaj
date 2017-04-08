@@ -6,6 +6,16 @@
 
 class Persoana
 {
+
+private:
+	string name;
+	unsigned int age;
+	TIP_SEX sex;
+	TIP_RASA race;
+	TIP_PIELE skinType;
+	TIP_TRUP bodyType;
+	std::pair<CULOARE_PAR, LUNGIME_PAR> hairType;
+
 public:
 	TIP_COMPORTAMENT comportament;
 	TIP_POTENTA_FINANCIARA potentaFinanciara;
@@ -14,6 +24,7 @@ public:
 
 	void specificatii() const
 	{
+		std::cout << nume << "\n";
 		std::cout << "trup:  " << trup << "\n";
 		std::cout << "potenta financiara:  " << potentaFinanciara << "\n";
 		std::cout << "comportament:  " << comportament << "\n";

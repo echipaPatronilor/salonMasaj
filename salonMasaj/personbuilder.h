@@ -1,30 +1,26 @@
 #ifndef _PERSONBUILDER_H_
 #define _PERSONBUILDER_H_
+
 #include "enums.h"
+#include <string>
 
 class PersonBuilder
 {
 public:
-	virtual TIP_COMPORTAMENT getComportament() = 0;
-	virtual TIP_POTENTA_FINANCIARA getPotenta() = 0;
-	virtual TIP_TRUP getTrup() = 0;
+
+	virtual string getName() = 0;
+	virtual int getAge() = 0;
+	virtual TIP_SEX getSex() = 0;
+	virtual TIP_RASA getRace() = 0;
+	virtual TIP_PIELE getSkinType() = 0;
+	virtual TIP_TRUP getBodyType() = 0;
+	virtual std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType() = 0;
+
+	/*virtual TIP_COMPORTAMENT getComportament() = 0;
+	virtual TIP_POTENTA_FINANCIARA getPotenta() = 0;*/
+	
+	
 };
 
-class MaseuzaBuilder : public PersonBuilder
-{
-public:
-	TIP_COMPORTAMENT getComportament() override
-	{
-		return COMPORTAMENT_NEDUBIOS;
-	}
-	TIP_POTENTA_FINANCIARA getPotenta() override
-	{
-		return POTENTA_FINANCIARA_RUPT_IN_FUND;
-	}
-	TIP_TRUP getTrup() override
-	{
-		return TRUP_ZVELT;
-	}
-};
 
 #endif // !_PERSONBUILDER_H_
