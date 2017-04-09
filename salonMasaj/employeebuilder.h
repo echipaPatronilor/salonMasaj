@@ -9,7 +9,7 @@ class EmployeeBuilder : public PersonBuilder
  public:
 	
 	 virtual std::string getCNP() = 0;
-	 vritual std::string getNumarTelefon() = 0;
+	 virtual std::string getNumarTelefon() = 0;
 	 virtual unsigned int getSalariu() = 0;
 	 virtual unsigned int getOreSaptamanal() = 0;
 };
