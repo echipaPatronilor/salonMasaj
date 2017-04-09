@@ -43,7 +43,6 @@ inline Angajat* Patron::racoleaza(TIP_ANGAJAT tipAngajat)
 	default:
 		break;
 	}
-
-	return factory.getAngajat(tipAngajat);
+	return factory.getAngajat();
 }
 #endif // !_PATRON_H_

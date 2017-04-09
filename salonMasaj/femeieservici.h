@@ -40,11 +40,6 @@ public:
 		return static_cast<TIP_TRUP>(Utils::random(0, __SIZEOF_TIP_TRUP));
 	}
 
-	std::string getNumarTelefon() override
-	{
-		return Utils::randomPhoneNumber();
-	}
-
 	unsigned int getSalariu() override
 	{
 		return 1200;

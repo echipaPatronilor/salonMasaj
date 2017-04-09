@@ -42,11 +42,6 @@ public:
 		return TRUP_ZVELT;
 	}
 
-	std::string getNumarTelefon() override
-	{
-		return Utils::randomPhoneNumber();
-	}
-
 	unsigned int getSalariu() override
 	{
 		return 2500;

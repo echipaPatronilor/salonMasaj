@@ -15,25 +15,29 @@ public:
 		builder = newBuilder;
 	}
 
-	Angajat* getAngajat(TIP_ANGAJAT tipPersoana) const
+	Angajat* getAngajat() const
 	{
 		Angajat* angajat = nullptr;
 
-		switch (tipPersoana)
-		{
-		case ANGAJAT_MASEUZA:
+		auto isMaseuza = dynamic_cast<MaseuzaBuilder*>(builder);
+		if (isMaseuza != nullptr) {
 			angajat = new Maseuza();
-			break;
-		case ANGAJAT_BODYGUARD:
-			angajat = new Bodyguard();
-			break;
-		case ANGAJAT_FEMEIESERVICI:
-			angajat = new FemeieServici();
-			break;
-		default:
-			angajat = nullptr;
-			break;
+			angajat->tip = ANGAJAT_MASEUZA;
 		}
+
+		auto isBodyguard = dynamic_cast<BodyGuardBuilder*>(builder);
+		if (isBodyguard != nullptr) {
+			angajat = new Bodyguard();
+			angajat->tip = ANGAJAT_BODYGUARD;
+		}
+
+		auto isFemeieServici = dynamic_cast<FemeieServiciBuilder*>(builder);
+		if (isFemeieServici != nullptr) {
+			angajat = new FemeieServici();
+			angajat->tip = ANGAJAT_FEMEIESERVICI;
+		}
+
+		if (angajat == nullptr) throw("Invalid Builder type set in AngajatFactory");
 
 		angajat->name = builder->getName();
 		angajat->age = builder->getAge();
@@ -44,11 +48,9 @@ public:
 		angajat->hairType = builder->getHairType();
 
 		angajat->CNP = Utils::randomCNP(angajat->sex, angajat->age);
-		angajat->telefon = builder->getNumarTelefon();
+		angajat->telefon = Utils::randomPhoneNumber();
 		angajat->salariu = builder->getSalariu();
 		angajat->oreSaptamanal = builder->getOreSaptamanal();
-
-		angajat->tip = tipPersoana;
 
 		return angajat;
 	}

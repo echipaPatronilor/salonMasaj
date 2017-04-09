@@ -6,7 +6,6 @@
 class AngajatBuilder : public PersonBuilder
 {
 public:	
-	 virtual std::string getNumarTelefon() = 0;
 	 virtual unsigned int getSalariu() = 0;
 	 virtual unsigned int getOreSaptamanal() = 0;
 
