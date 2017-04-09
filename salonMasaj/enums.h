@@ -1,11 +1,12 @@
 #ifndef _ENUMS_H_
 #define _ENUMS_H_
 
-const int __SIZEOF_TIP_TRUP = 4;
+const int __SIZEOF_TIP_TRUP = 5;
 enum TIP_TRUP
 {
 	TRUP_ZVELT,
 	TRUP_ATLETIC,
+	TRUP_CULTURIST,
 	TRUP_GRAS,
 	TRUP_GARBOVIT
 };
@@ -15,6 +16,7 @@ std::ostream& operator<<(std::ostream& out, const TIP_TRUP value) {
 	switch (value) {
 		PROCESS_VAL(TRUP_ZVELT);
 		PROCESS_VAL(TRUP_ATLETIC);
+		PROCESS_VAL(TRUP_CULTURIST);
 		PROCESS_VAL(TRUP_GRAS);
 		PROCESS_VAL(TRUP_GARBOVIT);
 	}
@@ -183,22 +185,20 @@ std::ostream& operator<<(std::ostream& out, const enum TIP_RASA value) {
 }
 
 
-const int __SIZEOF_TIP_PERSOANA = 4;
-enum TIP_PERSOANA
+const int __SIZEOF_TIP_PERSOANA = 3;
+enum TIP_ANGAJAT
 {
-	PERSOANA_MASEUZA,
-	PERSOANA_CLIENT,
-	PERSOANA_BODYGUARD,
-	PERSOANA_FEMEIESERVICI
+	ANGAJAT_MASEUZA,
+	ANGAJAT_BODYGUARD,
+	ANGAJAT_FEMEIESERVICI
 };
-std::ostream& operator<<(std::ostream& out, const enum TIP_PERSOANA value) {
+std::ostream& operator<<(std::ostream& out, const enum TIP_ANGAJAT value) {
 	const char* s = 0;
 #define PROCESS_VAL(p) case(p): s = #p; break;
 	switch (value) {
-		PROCESS_VAL(PERSOANA_MASEUZA);
-		PROCESS_VAL(PERSOANA_CLIENT);
-		PROCESS_VAL(PERSOANA_BODYGUARD);
-		PROCESS_VAL(PERSOANA_FEMEIESERVICI);
+		PROCESS_VAL(ANGAJAT_MASEUZA);
+		PROCESS_VAL(ANGAJAT_BODYGUARD);
+		PROCESS_VAL(ANGAJAT_FEMEIESERVICI);
 	}
 #undef PROCESS_VAL
 	return out << s;

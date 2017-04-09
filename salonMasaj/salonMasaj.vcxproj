@@ -148,14 +148,14 @@
     <ClInclude Include="angajat.h" />
     <ClInclude Include="bodyguard.h" />
     <ClInclude Include="client.h" />
-    <ClInclude Include="employeebuilder.h" />
+    <ClInclude Include="angajatbuilder.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="femeieservici.h" />
     <ClInclude Include="maseuze.h" />
     <ClInclude Include="patron.h" />
     <ClInclude Include="persoana.h" />
     <ClInclude Include="personbuilder.h" />
-    <ClInclude Include="personfactory.h" />
+    <ClInclude Include="angajatfactory.h" />
     <ClInclude Include="scriptmanager.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>

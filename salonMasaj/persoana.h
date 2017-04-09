@@ -7,8 +7,7 @@
 class Persoana
 {
 private:
-	friend class PersonFactory;
-
+	friend class AngajatFactory;
 	std::string name;
 	unsigned int age;
 	TIP_SEX sex;
@@ -16,13 +15,8 @@ private:
 	TIP_PIELE skinType;
 	TIP_TRUP bodyType;
 	std::pair<CULOARE_PAR, LUNGIME_PAR> hairType;
-	TIP_PERSOANA tip;
 
 public:
-	TIP_PERSOANA getTipPersoana()
-	{
-		return tip;
-	}
 	void specificatii() const;
 };
 

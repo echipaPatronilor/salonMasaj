@@ -2,7 +2,8 @@
 #define _FEMEIESERVICI_H_
 
 #include "angajat.h"
-#include "employeebuilder.h"
+#include "utils.h"
+#include "angajatbuilder.h"
 
 class FemeieServici : public Angajat
 {
@@ -14,7 +15,7 @@ class FemeieServici : public Angajat
 
 };
 
-class FemeieServiciBuilder : public EmployeeBuilder
+class FemeieServiciBuilder : public AngajatBuilder
 {
 public:
 	std::string getName() override
@@ -57,6 +58,11 @@ public:
 	std::string getCNP() override
 	{
 		return "";
+	}
+
+	std::string getNumarTelefon() override
+	{
+		return "07SPALPODELE";
 	}
 
 	unsigned int getSalariu() override

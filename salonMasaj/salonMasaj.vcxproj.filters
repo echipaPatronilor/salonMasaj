@@ -53,10 +53,10 @@
     <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="personfactory.h">
+    <ClInclude Include="angajatbuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="employeebuilder.h">
+    <ClInclude Include="angajatfactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

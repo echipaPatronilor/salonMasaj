@@ -1,30 +1,40 @@
 #ifndef _PATRON_H_
 #define _PATRON_H_
 
-#include "personfactory.h"
+#include "angajatfactory.h"
 #include "maseuze.h"
+#include "bodyguard.h"
+#include "femeieservici.h"
 
 class Patron
 {
 private:
-	PersonFactory factory;
-	MaseuzaBuilder racolatorMaseuze_adica_peste;
+	AngajatFactory factory;
+	MaseuzaBuilder peste;
+	BodyGuardBuilder bgs;
+	FemeieServiciBuilder tarla;
 
 public:
-	Persoana* racoleaza(TIP_PERSOANA tipPersoana);
+	Angajat* racoleaza(TIP_ANGAJAT tipAngajat);
 };
 
-inline Persoana* Patron::racoleaza(TIP_PERSOANA tipPersoana)
+inline Angajat* Patron::racoleaza(TIP_ANGAJAT tipAngajat)
 {
-	switch (tipPersoana)
+	switch (tipAngajat)
 	{
-	case PERSOANA_MASEUZA:
-		factory.setBuilder(&racolatorMaseuze_adica_peste);
+	case ANGAJAT_MASEUZA:
+		factory.setBuilder(&peste);
+		break;
+	case ANGAJAT_BODYGUARD:
+		factory.setBuilder(&bgs);
+		break;
+	case ANGAJAT_FEMEIESERVICI:
+		factory.setBuilder(&tarla);
 		break;
 	default:
 		break;
 	}
 
-	return factory.getPerson(tipPersoana);
+	return factory.getAngajat(tipAngajat);
 }
 #endif // !_PATRON_H_

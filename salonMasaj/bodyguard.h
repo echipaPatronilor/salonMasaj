@@ -2,19 +2,19 @@
 #define _BODYGUARD_H_
 
 #include "angajat.h"
-#include "employeebuilder.h"
+#include "angajatbuilder.h"
 
 class Bodyguard : public Angajat
 {
 
 };
 
-class BodyGuardBuilder : public EmployeeBuilder
+class BodyGuardBuilder : public AngajatBuilder
 {
 public:
 	std::string getName() override
 	{
-		return "Mitza Biciclista";
+		return "Gica Batausu";
 	}
 
 	int getAge() override
@@ -24,7 +24,7 @@ public:
 
 	TIP_SEX getSex() override
 	{
-		return SEX_FEMININ;
+		return SEX_MASCULIN;
 	}
 
 	TIP_RASA getRace() override
@@ -39,7 +39,7 @@ public:
 
 	TIP_TRUP getBodyType() override
 	{
-		return TRUP_ZVELT;
+		return TRUP_CULTURIST;
 	}
 
 	std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType() override
@@ -52,6 +52,11 @@ public:
 	std::string getCNP() override
 	{
 		return "";
+	}
+
+	std::string getNumarTelefon() override
+	{
+		return "07DAUBATAIE";
 	}
 
 	unsigned int getSalariu() override

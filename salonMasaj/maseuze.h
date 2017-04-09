@@ -3,14 +3,14 @@
 
 #include "utils.h"
 #include "angajat.h"
-#include "employeebuilder.h"
+#include "angajatbuilder.h"
 
 class Maseuza : public Angajat
 {
 
 };
 
-class MaseuzaBuilder : public EmployeeBuilder
+class MaseuzaBuilder : public AngajatBuilder
 {
 public:
 	std::string getName() override
