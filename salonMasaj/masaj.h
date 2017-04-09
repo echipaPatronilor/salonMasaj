@@ -6,15 +6,17 @@ class Produs
  private:
 	 std::string denumire;
 	 unsigned int cantiate;
+	 unsigned int pretUnitate;
 
  public:
 
 	 Produs(){}
 
-	 Produs(std::string denumire, unsigned int cantitate)
+	 Produs(std::string denumire, unsigned int cantitate, unsigned int pret)
 	 {
 		 this->denumire = denumire;
 		 this->cantiate = cantiate;
+		 this->pretUnitate = pret;
 	 }
 
 	 std::string getDenumire() const
@@ -25,6 +27,16 @@ class Produs
 	 unsigned int getCantitate() const
 	 {
 		 return this->cantiate;
+	 }
+
+	 unsigned int getPretUnitate() const
+	 {
+		 return this->pretUnitate;
+	 }
+
+	 unsigned int getPretTotal() const
+	 {
+		 return this->getCantitate() * this->getPretUnitate();
 	 }
 };
 
@@ -68,7 +80,12 @@ public:
 
 	int getPret() const
 	{
-		return this->pretLei;
+		int sum = this->pretLei;
+
+		for (auto prod : this->produse)
+			sum += prod.getPretTotal();
+		
+		return sum;
 	}
 
 	int getDurata() const
