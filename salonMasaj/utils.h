@@ -29,7 +29,6 @@ inline void Utils::clearscreen()
 
 inline int Utils::random(int lower, int upper)
 {
-	srand(time(nullptr));
 	return (rand() % (upper - lower)) + lower;
 }
 
@@ -39,7 +38,7 @@ inline std::string Utils::randomPhoneNumber()
 
 	for (int i = 1; i <= 8; ++i)
 	{
-		number.push_back('0' + Utils::random(0, 9));
+		number.push_back('0' + Utils::random(0, 10));
 	}
 
 	return number;

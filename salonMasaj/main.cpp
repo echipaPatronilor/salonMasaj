@@ -5,6 +5,8 @@ using namespace std;
 
 int main()
 {
+	srand(time(nullptr));
+
 	Patron patron;
 	cout << "Racolam maseuza\n";
 
