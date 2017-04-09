@@ -43,7 +43,7 @@ public:
 		angajat->bodyType = builder->getBodyType();
 		angajat->hairType = builder->getHairType();
 
-		angajat->CNP = builder->getCNP();
+		angajat->CNP = Utils::randomCNP(angajat->sex, angajat->age);
 		angajat->telefon = builder->getNumarTelefon();
 		angajat->salariu = builder->getSalariu();
 		angajat->oreSaptamanal = builder->getOreSaptamanal();

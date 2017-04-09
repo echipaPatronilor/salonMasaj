@@ -14,14 +14,11 @@ class FemeieServici : public Angajat
 	 void spala(std::string camera);
 	 void curata(std::string obiect);
 	 void schimbaLenjerie(std::string camera);
-
 };
 
 class FemeieServiciBuilder : public AngajatBuilder
 {
- private:
-	TIP_SEX sex;
-	unsigned int varsta;
+private:
 
 public:
 	std::string getName() override
@@ -31,39 +28,17 @@ public:
 
 	unsigned int getAge() override
 	{
-		return varsta = Utils::random(30, 60);
+		return Utils::random(20, 70);;
 	}
 
 	TIP_SEX getSex() override
 	{
-		return sex = SEX_FEMININ;
-	}
-
-	TIP_RASA getRace() override
-	{
-		return static_cast<TIP_RASA>(Utils::random(0, __SIZEOF_TIP_RASA));
-	}
-
-	TIP_PIELE getSkinType() override
-	{
-		return static_cast<TIP_PIELE>(Utils::random(0, __SIZEOF_TIP_PIELE));
+		return SEX_FEMININ;
 	}
 
 	TIP_TRUP getBodyType() override
 	{
 		return static_cast<TIP_TRUP>(Utils::random(0, __SIZEOF_TIP_TRUP));
-	}
-
-	std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType() override
-	{
-		return std::make_pair(
-			static_cast<CULOARE_PAR>(Utils::random(0, __SIZEOF_CULOARE_PAR)),
-			static_cast<LUNGIME_PAR>(Utils::random(0, __SIZEOF_LUNGIME_PAR)));
-	}
-
-	std::string getCNP() override
-	{
-		return Utils::randomCNP(sex, varsta);
 	}
 
 	std::string getNumarTelefon() override
