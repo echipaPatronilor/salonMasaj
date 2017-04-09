@@ -55,6 +55,11 @@ public:
 		return "";
 	}
 
+	std::string getNumarTelefon() override
+	{
+		return "0769696969";
+	}
+
 	unsigned int getSalariu() override
 	{
 		return 2500;
