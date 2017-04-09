@@ -30,7 +30,7 @@ inline void Utils::clearscreen()
 inline int Utils::random(int lower, int upper)
 {
 	srand(time(nullptr));
-	return (rand() % (upper - lower + 1)) + lower;
+	return (rand() % (upper - lower)) + lower;
 }
 
 inline std::string Utils::randomPhoneNumber()
