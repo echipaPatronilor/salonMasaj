@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="actionScript.txt" />
+    <Text Include="event.txt" />
     <Text Include="NumeBaieti.txt" />
     <Text Include="NumeFete.txt" />
     <Text Include="NumeFamilie.txt" />

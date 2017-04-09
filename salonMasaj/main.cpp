@@ -5,7 +5,8 @@ using namespace std;
 
 int main()
 {
-	Utils::seedrand();
+	Utils::setupConsole();
+	Utils::seedRand();
 
 	cout << "Racolam maseuza\n";
 	Angajat * pers = Patron::getInstance().racoleaza(ANGAJAT_MASEUZA);
@@ -19,6 +20,7 @@ int main()
 	pers->specificatii();
 	cout << "\n\n";
 
+	Utils::eveniment();
 	Utils::wait();
 	return 0;
 }

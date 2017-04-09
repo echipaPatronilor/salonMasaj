@@ -9,6 +9,12 @@
 #include <vector>
 #include "enums.h"
 
+#include <iostream>
+#include <math.h>
+#include <conio.h>
+#include <windows.h>
+#include <Wincon.h>
+
 class Utils 
 {
 private:
@@ -27,7 +33,9 @@ public:
 	static std::string randomPhoneNumber();
 	static std::string randomCNP(TIP_SEX, unsigned int); 
 	static std::string randomName(TIP_SEX);
-	static void seedrand();
+	static void seedRand();
+	static void eveniment();
+	static void setupConsole();
 };
 
 
@@ -160,9 +168,31 @@ inline std::string Utils::randomName(TIP_SEX sex)
 	return (nume + " " + prenume);
 }
 
-inline void Utils::seedrand()
+inline void Utils::seedRand()
 {
 	srand(time(nullptr));
+}
+
+inline void Utils::eveniment()
+{
+	std::ifstream fin("event.txt");
+	char s[1000];
+	while (fin.getline(s, 1000))
+		std::cout << s << '\n';
+}
+
+inline void Utils::setupConsole()
+{
+	CONSOLE_FONT_INFOEX cfi;
+	cfi.cbSize = sizeof(cfi);
+	cfi.nFont = 0;
+	cfi.dwFontSize.X = 0;
+	cfi.dwFontSize.Y = 12;
+	cfi.FontFamily = FF_DONTCARE;
+	cfi.FontWeight = FW_NORMAL;
+	std::wcscpy(cfi.FaceName, L"Consolas");
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+	system("mode 650");
 }
 
 #endif // !_UTILS_H_
