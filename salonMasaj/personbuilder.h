@@ -14,7 +14,6 @@ public:
 	virtual TIP_PIELE getSkinType() = 0;
 	virtual TIP_TRUP getBodyType() = 0;
 	virtual std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType() = 0;
-
 };
 
 
