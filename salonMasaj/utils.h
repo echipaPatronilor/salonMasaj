@@ -12,6 +12,11 @@
 class Utils 
 {
  public:
+	
+	static const int numarNumeFete = 108;
+	static const int numarNumeBaieti = 85;
+	static const int numarNumeFamilie = 39;
+
 	static void wait();
 	static void clearscreen();
 	static int random(int, int);
@@ -134,11 +139,11 @@ inline std::string Utils::randomName(TIP_SEX sex)
 
 	std::string nume, prenume;
 	
-	int rnd = Utils::random(1, 34);
+	int rnd = Utils::random(1, numarNumeFamilie + 1);
 	for (int i = 1; i <= rnd; ++i)
 		ffam >> nume;
 
-	int limit = (which_file == 0) ? 108 : 85;
+	int limit = (which_file == 0) ? numarNumeFete : numarNumeBaieti;
 	
 	rnd = Utils::random(1, limit + 1);
 	for (int i = 1; i <= rnd; ++i)
@@ -147,7 +152,7 @@ inline std::string Utils::randomName(TIP_SEX sex)
 	fin.close();
 	ffam.close();
 
-	return (nume + prenume);
+	return (nume + " " + prenume);
 }
 
 #endif // !_UTILS_H_

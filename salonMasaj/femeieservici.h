@@ -18,22 +18,21 @@ class FemeieServici : public Angajat
 
 class FemeieServiciBuilder : public AngajatBuilder
 {
-private:
-
 public:
-	std::string getName() override
-	{
-		return "Putaru Marioara";
-	}
 
 	unsigned int getAge() override
 	{
-		return Utils::random(20, 70);;
+		return Utils::random(20, 70);
 	}
 
 	TIP_SEX getSex() override
 	{
 		return SEX_FEMININ;
+	}
+
+	std::string getName() override
+	{
+		return Utils::randomName(SEX_FEMININ);
 	}
 
 	TIP_TRUP getBodyType() override

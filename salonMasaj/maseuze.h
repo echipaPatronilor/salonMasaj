@@ -72,7 +72,7 @@ private:
 public:
 	std::string getName() override
 	{
-		return "Mitza Biciclista";
+		return Utils::randomName(SEX_FEMININ);
 	}
 
 	unsigned int getAge() override

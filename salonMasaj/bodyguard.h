@@ -16,12 +16,12 @@ private:
 public:
 	std::string getName() override
 	{
-		return "Gica Batausu";
+		return Utils::randomName(SEX_MASCULIN);
 	}
 
 	unsigned int getAge() override
 	{
-		return Utils::random(30, 60);;
+		return Utils::random(30, 60);
 	}
 
 	TIP_SEX getSex() override
