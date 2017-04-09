@@ -67,20 +67,24 @@ class Maseuza : public Angajat
 
 class MaseuzaBuilder : public AngajatBuilder
 {
+ private:
+	TIP_SEX sex;
+	unsigned int varsta;
+
 public:
 	std::string getName() override
 	{
 		return "Mitza Biciclista";
 	}
 
-	int getAge() override
+	unsigned int getAge() override
 	{
-		return Utils::random(16, 40);
+		return varsta = Utils::random(16, 40);
 	}
 
 	TIP_SEX getSex() override
 	{
-		return SEX_FEMININ;
+		return sex = SEX_FEMININ;
 	}
 
 	TIP_RASA getRace() override
@@ -107,7 +111,7 @@ public:
 
 	std::string getCNP() override
 	{
-		return "";
+		return Utils::randomCNP(sex, varsta);
 	}
 
 	std::string getNumarTelefon() override

@@ -11,20 +11,24 @@ class Bodyguard : public Angajat
 
 class BodyGuardBuilder : public AngajatBuilder
 {
+private:
+	TIP_SEX sex;
+	unsigned int varsta;
+
 public:
 	std::string getName() override
 	{
 		return "Gica Batausu";
 	}
 
-	int getAge() override
+	unsigned int getAge() override
 	{
-		return Utils::random(25, 40);
+		return varsta = Utils::random(25, 40);
 	}
 
 	TIP_SEX getSex() override
 	{
-		return SEX_MASCULIN;
+		return sex = SEX_MASCULIN;
 	}
 
 	TIP_RASA getRace() override
@@ -51,7 +55,7 @@ public:
 
 	std::string getCNP() override
 	{
-		return "";
+		return Utils::randomCNP(sex, varsta);
 	}
 
 	std::string getNumarTelefon() override
