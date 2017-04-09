@@ -75,7 +75,7 @@ public:
 
 	int getAge() override
 	{
-		return Utils::random(18, 60);
+		return Utils::random(16, 40);
 	}
 
 	TIP_SEX getSex() override
