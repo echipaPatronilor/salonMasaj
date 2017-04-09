@@ -204,5 +204,27 @@ std::ostream& operator<<(std::ostream& out, const enum TIP_PERSOANA value) {
 	return out << s;
 }
 
+const int __SIZEOF_TIP_MASAJ = 5;
+enum TIP_MASAJ
+{
+	MASAJ_EROTIC,
+	MASAJ_KINETOTERAPEUTIC,
+	MASAJ_CU_ULEIURI,
+	MASAJ_DE_RELAXARE,
+	MASAJ_THAILANDEZ
+};
+std::ostream& operator<<(std::ostream& out, const enum TIP_MASAJ value) {
+	const char* s = 0;
+#define PROCESS_VAL(p) case(p): s = #p; break;
+	switch (value) {
+		PROCESS_VAL(MASAJ_EROTIC);
+		PROCESS_VAL(MASAJ_KINETOTERAPEUTIC);
+		PROCESS_VAL(MASAJ_CU_ULEIURI);
+		PROCESS_VAL(MASAJ_DE_RELAXARE);
+		PROCESS_VAL(MASAJ_THAILANDEZ);
+	}
+#undef PROCESS_VAL
+	return out << s;
+}
 
 #endif // !_ENUMS_H_

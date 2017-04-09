@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <string>
+#include <vector>
 
 class Utils 
 {
@@ -11,6 +13,7 @@ class Utils
 	 static void wait();
 	 static void clearscreen();
 	 static int random(int, int);
+	 static std::string randomPhoneNumber();
 };
 
 
@@ -28,6 +31,18 @@ inline int Utils::random(int lower, int upper)
 {
 	srand(time(nullptr));
 	return (rand() % (upper - lower + 1)) + lower;
+}
+
+inline std::string Utils::randomPhoneNumber()
+{
+	std::string number = "07";
+
+	for (int i = 1; i <= 8; ++i)
+	{
+		number.push_back('0' + Utils::random(0, 9));
+	}
+
+	return number;
 }
 
 #endif // !_UTILS_H_

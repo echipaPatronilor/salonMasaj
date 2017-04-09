@@ -3,10 +3,12 @@
 
 #include "angajat.h"
 #include "employeebuilder.h"
+#include "client.h"
 
 class Bodyguard : public Angajat
 {
-
+	void bate(const Client& clientBulangiu);
+	void daAfara(const Client& clientNesimtit);
 };
 
 class BodyGuardBuilder : public EmployeeBuilder
@@ -14,17 +16,17 @@ class BodyGuardBuilder : public EmployeeBuilder
 public:
 	std::string getName() override
 	{
-		return "Mitza Biciclista";
+		return "Smardoiu John";
 	}
 
 	int getAge() override
 	{
-		return Utils::random(18, 60);
+		return Utils::random(25, 40);
 	}
 
 	TIP_SEX getSex() override
 	{
-		return SEX_FEMININ;
+		return SEX_MASCULIN;
 	}
 
 	TIP_RASA getRace() override
@@ -39,7 +41,7 @@ public:
 
 	TIP_TRUP getBodyType() override
 	{
-		return TRUP_ZVELT;
+		return TRUP_ATLETIC;
 	}
 
 	std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType() override
@@ -54,9 +56,14 @@ public:
 		return "";
 	}
 
+	std::string getNumarTelefon() override
+	{
+		return Utils::randomPhoneNumber();
+	}
+
 	unsigned int getSalariu() override
 	{
-		return 2500;
+		return 2000;
 	}
 
 	unsigned int getOreSaptamanal() override

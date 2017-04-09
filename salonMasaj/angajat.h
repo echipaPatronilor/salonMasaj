@@ -1,6 +1,7 @@
 #ifndef _ANGAJAT_H_
 #define _ANGAJAT_H_
 
+#include "utils.h"
 #include "persoana.h"
 
 class Angajat : public Persoana
