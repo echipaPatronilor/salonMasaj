@@ -6,6 +6,8 @@
 class Angajat : public Persoana
 {
  private:
+
+	 std::string CNP;
 	 unsigned int salariu;
 	 unsigned int oreSaptamanal;
  

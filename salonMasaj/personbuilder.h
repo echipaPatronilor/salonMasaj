@@ -15,8 +15,6 @@ public:
 	virtual TIP_TRUP getBodyType() = 0;
 	virtual std::pair<CULOARE_PAR, LUNGIME_PAR> getHairType() = 0;
 
-	/*virtual TIP_COMPORTAMENT getComportament() = 0;
-	virtual TIP_POTENTA_FINANCIARA getPotenta() = 0;*/
 };
 
 

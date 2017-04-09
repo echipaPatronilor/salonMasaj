@@ -56,6 +56,9 @@
     <ClInclude Include="personfactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="employeebuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="actionScript.txt">

@@ -2,13 +2,14 @@
 #define _BODYGUARD_H_
 
 #include "angajat.h"
+#include "employeebuilder.h"
 
 class Bodyguard : public Angajat
 {
 
 };
 
-class BodyGuardBuilder : public PersonBuilder
+class BodyGuardBuilder : public EmployeeBuilder
 {
 
 };

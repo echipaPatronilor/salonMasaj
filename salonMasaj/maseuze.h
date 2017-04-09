@@ -3,13 +3,14 @@
 
 #include "utils.h"
 #include "angajat.h"
+#include "employeebuilder.h"
 
 class Maseuza : public Angajat
 {
 
 };
 
-class MaseuzaBuilder : public PersonBuilder
+class MaseuzaBuilder : public EmployeeBuilder
 {
 public:
 	std::string getName() override
@@ -47,6 +48,21 @@ public:
 		return std::make_pair(
 			static_cast<CULOARE_PAR>(Utils::random(0, __SIZEOF_CULOARE_PAR)),
 			static_cast<LUNGIME_PAR>(Utils::random(0, __SIZEOF_LUNGIME_PAR)));
+	}
+
+	std::string getCNP() override
+	{
+		return "";
+	}
+
+	unsigned int getSalariu() override
+	{
+		return 2500;
+	}
+
+	unsigned int getOreSaptamanal() override
+	{
+		return 40;
 	}
 };
 

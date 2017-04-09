@@ -2,6 +2,7 @@
 #define _FEMEIESERVICI_H_
 
 #include "angajat.h"
+#include "employeebuilder.h"
 
 class FemeieServici : public Angajat
 {
@@ -11,7 +12,7 @@ class FemeieServici : public Angajat
 	 void curata();
 };
 
-class FemeieServiciBuilder : public PersonBuilder
+class FemeieServiciBuilder : public EmployeeBuilder
 {
 
 };
