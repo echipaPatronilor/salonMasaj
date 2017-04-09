@@ -64,11 +64,14 @@
     <Text Include="actionScript.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="NumeFete.txt">
-      <Filter>Source Files</Filter>
-    </Text>
     <Text Include="NumeBaieti.txt">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="NumeFete.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="NumeFamilie.txt">
+      <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
 </Project>

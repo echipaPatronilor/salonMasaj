@@ -163,6 +163,7 @@
     <Text Include="actionScript.txt" />
     <Text Include="NumeBaieti.txt" />
     <Text Include="NumeFete.txt" />
+    <Text Include="NumeFamilie.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,6 +2,7 @@
 #define _UTILS_H_
 
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
 #include <ctime>
 #include <string>
@@ -11,11 +12,12 @@
 class Utils 
 {
  public:
-	 static void wait();
-	 static void clearscreen();
-	 static int random(int, int);
-	 static std::string randomPhoneNumber();
-	 static std::string randomCNP(TIP_SEX, unsigned int); 
+	static void wait();
+	static void clearscreen();
+	static int random(int, int);
+	static std::string randomPhoneNumber();
+	static std::string randomCNP(TIP_SEX, unsigned int); 
+	static std::string randomName(TIP_SEX);
 };
 
 
@@ -98,6 +100,54 @@ inline std::string Utils::randomCNP(TIP_SEX sex, const unsigned int varsta)
 		CNP.push_back('0' + Utils::random(0, 10));
 
 	return CNP;
+}
+
+inline std::string Utils::randomName(TIP_SEX sex)
+{
+
+	int which_file;
+
+	switch (sex)
+	{
+		case SEX_FEMININ: 
+			which_file = 0;
+			break;
+
+		case SEX_MASCULIN:
+			which_file = 1;
+			break;
+
+		default:
+			which_file = Utils::random(0, 2);
+			break;
+	}
+
+	std::string fisier;
+
+	if (which_file == 0)
+		fisier = "NumeFete.txt";
+	else
+		fisier = "NumeBaieti.txt";
+
+	std::ifstream fin(fisier);
+	std::ifstream ffam("NumeFamilie.txt");
+
+	std::string nume, prenume;
+	
+	int rnd = Utils::random(1, 34);
+	for (int i = 1; i <= rnd; ++i)
+		ffam >> nume;
+
+	int limit = (which_file == 0) ? 108 : 85;
+	
+	rnd = Utils::random(1, limit + 1);
+	for (int i = 1; i <= rnd; ++i)
+		fin >> prenume;
+
+	fin.close();
+	ffam.close();
+
+	return (nume + prenume);
 }
 
 #endif // !_UTILS_H_
