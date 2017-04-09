@@ -11,11 +11,15 @@
 
 class Utils 
 {
- public:
-	
+private:
+
 	static const int numarNumeFete = 108;
 	static const int numarNumeBaieti = 85;
 	static const int numarNumeFamilie = 39;
+
+public:
+	
+	
 
 	static void wait();
 	static void clearscreen();
@@ -23,6 +27,7 @@ class Utils
 	static std::string randomPhoneNumber();
 	static std::string randomCNP(TIP_SEX, unsigned int); 
 	static std::string randomName(TIP_SEX);
+	static void seedrand();
 };
 
 
@@ -153,6 +158,11 @@ inline std::string Utils::randomName(TIP_SEX sex)
 	ffam.close();
 
 	return (nume + " " + prenume);
+}
+
+inline void Utils::seedrand()
+{
+	srand(time(nullptr));
 }
 
 #endif // !_UTILS_H_

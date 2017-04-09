@@ -9,12 +9,21 @@
 class Patron
 {
 private:
+	Patron() {}
+	Patron(Patron const&);         // don't implement
+	void operator=(Patron const&); // don't implement
+
 	AngajatFactory factory;
 	MaseuzaBuilder peste;
 	BodyGuardBuilder bgs;
 	FemeieServiciBuilder tarla;
 
 public:
+	static Patron& getInstance()
+	{
+		static Patron instance;
+		return instance;
+	}
 	Angajat* racoleaza(TIP_ANGAJAT tipAngajat);
 };
 

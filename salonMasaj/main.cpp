@@ -5,19 +5,16 @@ using namespace std;
 
 int main()
 {
-	srand(time(nullptr));
-
-	Patron patron;
-	Angajat* pers;
+	Utils::seedrand();
 
 	cout << "Racolam maseuza\n";
-	pers = patron.racoleaza(ANGAJAT_MASEUZA);
+	Angajat * pers = Patron::getInstance().racoleaza(ANGAJAT_MASEUZA);
 	cout << "Am racolat " << pers->getTipAngajat() << " cu urmatoarele specificatii:\n";
 	pers->specificatii();
 	cout << "\n\n";
 
 	cout << "Angajam bodyguard\n";
-	pers = patron.racoleaza(ANGAJAT_BODYGUARD);
+	pers = Patron::getInstance().racoleaza(ANGAJAT_BODYGUARD);
 	cout << "Am angajat " << pers->getTipAngajat() << " cu urmatoarele specificatii:\n";
 	pers->specificatii();
 	cout << "\n\n";

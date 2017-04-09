@@ -10,9 +10,10 @@
 
 class Maseuza : public Angajat
 {
-
-	int maseaza(const Client& client, const Masaj& masaj)
+	int maseaza(const Client& client, const Masaj& masaj) const
 	{
+		// vom folosi proprietati ale *this-ului si ale client-ului pt poveste
+		// multithreading here
 		return masaj.getPret();
 	}
 };
