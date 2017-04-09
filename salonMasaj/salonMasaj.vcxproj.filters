@@ -59,6 +59,9 @@
     <ClInclude Include="angajatfactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="masaj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="actionScript.txt">
