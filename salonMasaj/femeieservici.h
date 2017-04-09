@@ -11,7 +11,9 @@ class FemeieServici : public Angajat
  public:
 
 	 void daCuMatura(std::string camera);
+	 void spala(std::string camera);
 	 void curata(std::string obiect);
+	 void schimbaLenjerie(std::string camera);
 
 };
 
@@ -62,7 +64,7 @@ public:
 
 	std::string getNumarTelefon() override
 	{
-		return "07SPALPODELE";
+		return Utils::randomPhoneNumber();
 	}
 
 	unsigned int getSalariu() override

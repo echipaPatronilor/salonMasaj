@@ -2,11 +2,11 @@
 #define _BODYGUARD_H_
 
 #include "angajat.h"
-#include "angajatbuilder.h"
 
 class Bodyguard : public Angajat
 {
-
+	void bate(const Client& clientBulangiu);
+	void daAfara(const Client& clientNesimtit);
 };
 
 class BodyGuardBuilder : public AngajatBuilder
@@ -19,7 +19,7 @@ public:
 
 	int getAge() override
 	{
-		return Utils::random(18, 60);
+		return Utils::random(25, 40);
 	}
 
 	TIP_SEX getSex() override
@@ -56,12 +56,12 @@ public:
 
 	std::string getNumarTelefon() override
 	{
-		return "07DAUBATAIE";
+		return Utils::randomPhoneNumber();
 	}
 
 	unsigned int getSalariu() override
 	{
-		return 2500;
+		return 2000;
 	}
 
 	unsigned int getOreSaptamanal() override
