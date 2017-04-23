@@ -24,6 +24,7 @@ public:
 		static Patron instance;
 		return instance;
 	}
+
 	Angajat* racoleaza(TIP_ANGAJAT tipAngajat);
 };
 

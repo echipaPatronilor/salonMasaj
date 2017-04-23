@@ -1,6 +1,4 @@
-#include "utils.h"
-#include "persoana.h"
-#include "patron.h"
+#include "scriptmanager.h"
 using namespace std;
 
 int main()

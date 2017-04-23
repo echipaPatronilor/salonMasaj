@@ -3,14 +3,16 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
+
 #include <cstdlib>
+#include <cmath>
 #include <ctime>
+
 #include <string>
 #include <vector>
 #include "enums.h"
 
-#include <iostream>
-#include <math.h>
 #include <conio.h>
 #include <windows.h>
 #include <Wincon.h>
@@ -25,8 +27,6 @@ private:
 
 public:
 	
-	
-
 	static void wait();
 	static void clearscreen();
 	static int random(int, int);

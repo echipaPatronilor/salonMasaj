@@ -151,6 +151,8 @@
     <ClInclude Include="angajatbuilder.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="femeieservici.h" />
+    <ClInclude Include="clientfactory.h" />
+    <ClInclude Include="clientbuilder.h" />
     <ClInclude Include="masaj.h" />
     <ClInclude Include="maseuze.h" />
     <ClInclude Include="patron.h" />

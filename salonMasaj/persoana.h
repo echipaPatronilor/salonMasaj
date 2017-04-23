@@ -7,7 +7,10 @@
 class Persoana
 {
 private:
+	
 	friend class AngajatFactory;
+	friend class ClientFactory;
+	
 	std::string name;
 	unsigned int age;
 	TIP_SEX sex;

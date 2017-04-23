@@ -8,8 +8,12 @@
 
 class AngajatFactory
 {
+private:
+
 	AngajatBuilder* builder;
+
 public:
+
 	void setBuilder(AngajatBuilder* newBuilder)
 	{
 		builder = newBuilder;

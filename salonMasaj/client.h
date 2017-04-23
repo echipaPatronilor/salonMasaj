@@ -7,13 +7,21 @@
 class Client : public Persoana
 {
 
-};
+private:
+	
+	friend class ClientFactory;
 
-class ClientBuilder : public PersonBuilder
-{
+	TIP_COMPORTAMENT comportament;
+	TIP_POTENTA_FINANCIARA potentaFinanciara;
 
-	/*virtual TIP_COMPORTAMENT getComportament() = 0;
-	virtual TIP_POTENTA_FINANCIARA getPotenta() = 0;*/
+public:
+
+	void specificatii() const
+	{
+		Persoana::specificatii();
+		std::cout << "tip comportament:  " << comportament << "\n";
+		std::cout << "potenta financiara:  " << potentaFinanciara << "\n";
+	}
 };
 
 #endif // !_CLIENT_H_
