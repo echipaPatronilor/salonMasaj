@@ -6,7 +6,7 @@ int main()
 	Utils::setupConsole();
 	Utils::seedRand();
 
-	cout << "Racolam maseuza\n";
+/*	cout << "Racolam maseuza\n";
 	Angajat * pers = Patron::getInstance().racoleaza(ANGAJAT_MASEUZA);
 	cout << "Am racolat " << pers->getTipAngajat() << " cu urmatoarele specificatii:\n";
 	pers->specificatii();
@@ -16,7 +16,7 @@ int main()
 	pers = Patron::getInstance().racoleaza(ANGAJAT_BODYGUARD);
 	cout << "Am angajat " << pers->getTipAngajat() << " cu urmatoarele specificatii:\n";
 	pers->specificatii();
-	cout << "\n\n";
+	cout << "\n\n";*/
 
 	Utils::eveniment();
 	Utils::wait();

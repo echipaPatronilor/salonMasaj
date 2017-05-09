@@ -5,6 +5,7 @@
 
 class Bodyguard : public Angajat
 {
+ public:
 	void bate(const Client& clientBulangiu);
 	void daAfara(const Client& clientNesimtit);
 };

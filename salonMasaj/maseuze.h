@@ -10,6 +10,7 @@
 
 class Maseuza : public Angajat
 {
+ public:
 	int maseaza(const Client& client, const Masaj& masaj) const
 	{
 		// vom folosi proprietati ale *this-ului si ale client-ului pt poveste
