@@ -15,6 +15,9 @@ class Maseuza : public Angajat
 	{
 		// vom folosi proprietati ale *this-ului si ale client-ului pt poveste
 		// multithreading here
+
+		std::cout << "Domnul " << client.getName() << " se va bucura de un masaj " << masaj.getTip() << " in compania domnisoarei " << this->getName() << std::endl;
+
 		return masaj.getPret();
 	}
 };

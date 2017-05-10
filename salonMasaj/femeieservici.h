@@ -10,10 +10,22 @@ class FemeieServici : public Angajat
 
  public:
 
-	 void daCuMatura(std::string camera);
-	 void spala(std::string camera);
-	 void curata(std::string obiect);
-	 void schimbaLenjerie(std::string camera);
+	 void daCuMatura(std::string camera)
+	 {
+		 std::cout << "Camera " << camera << " a fost maturata de " << this->name << std::endl;
+	 }
+	 void spala(std::string camera)
+	 {
+		 std::cout << "Camera " << camera << " a fost spalata de " << this->name << std::endl;
+	 }
+	 void curata(std::string obiect)
+	 {
+		 std::cout << this->name << " abia a reusit sa scoata jegul de pe " << obiect << std::endl;
+	 }
+	 void schimbaLenjerie(std::string camera)
+	 {
+		std::cout << camera << " are acum lenjerie noua, cea veche era patata de... ulei" << std::endl;
+	 }
 };
 
 class FemeieServiciBuilder : public AngajatBuilder

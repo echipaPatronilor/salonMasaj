@@ -6,7 +6,7 @@
 
 class Persoana
 {
-private:
+protected:
 	
 	friend class AngajatFactory;
 	friend class ClientFactory;
@@ -20,7 +20,13 @@ private:
 	std::pair<CULOARE_PAR, LUNGIME_PAR> hairType;
 
 public:
+	
 	void specificatii() const;
+
+	std::string getName() const
+	{
+		return this->name;
+	}
 };
 
 inline void Persoana::specificatii() const

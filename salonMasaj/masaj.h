@@ -6,13 +6,13 @@ class Produs
  private:
 	 std::string denumire;
 	 unsigned int cantiate;
-	 unsigned int pretUnitate;
+	 double pretUnitate;
 
  public:
 
 	 Produs(){}
 
-	 Produs(std::string denumire, unsigned int cantitate, unsigned int pret)
+	 Produs(std::string denumire, unsigned int cantitate, double pret)
 	 {
 		 this->denumire = denumire;
 		 this->cantiate = cantiate;
@@ -29,12 +29,12 @@ class Produs
 		 return this->cantiate;
 	 }
 
-	 unsigned int getPretUnitate() const
+	 double getPretUnitate() const
 	 {
 		 return this->pretUnitate;
 	 }
 
-	 unsigned int getPretTotal() const
+	 double getPretTotal() const
 	 {
 		 return this->getCantitate() * this->getPretUnitate();
 	 }
@@ -49,26 +49,27 @@ private:
 	std::vector<Produs> produse;
 
 public:
+	
+	Masaj() {}
 
-	Masaj(unsigned int minute, unsigned int pret, TIP_MASAJ tip, std::vector<Produs> prod = {})
+	Masaj(const unsigned int minute, const unsigned int pret, const TIP_MASAJ tip)
 	{
 		this->durataMinute = minute;
 		this->pretLei = pret;
 		this->tip = tip;
-		this->produse = prod;
 	}
 
-	void setDurata(unsigned int minute)
+	void setDurata(const unsigned int minute)
 	{
 		this->durataMinute = minute;
 	}
 
-	void setPret(unsigned int pret)
+	void setPret(const unsigned int pret)
 	{
 		this->pretLei = pret;
 	}
 
-	void setTip(TIP_MASAJ tip)
+	void setTip(const TIP_MASAJ tip)
 	{
 		this->tip = tip;
 	}
@@ -91,6 +92,11 @@ public:
 	int getDurata() const
 	{
 		return this->durataMinute;
+	}
+
+	TIP_MASAJ getTip() const
+	{
+		return this->tip;
 	}
 };
 

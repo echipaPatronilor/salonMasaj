@@ -3,6 +3,8 @@
 
 #include "persoana.h"
 #include "personbuilder.h"
+#include "maseuze.h"
+#include "masaj.h"
 
 class Client : public Persoana
 {
@@ -15,12 +17,21 @@ private:
 	TIP_POTENTA_FINANCIARA potentaFinanciara;
 
 public:
+	
+	void cereMasaj(const Masaj& masaj)
+	{
+
+		std::cout << "Domnul " << this->getName() << " a cerut un masaj " << masaj.getTip() << std::endl;
+		int eveniment = Utils::random(1, 4);
+		if (eveniment % 2 == 0)
+			Utils::eveniment();
+	}
 
 	void specificatii() const
 	{
 		Persoana::specificatii();
-		std::cout << "tip comportament:  " << comportament << "\n";
-		std::cout << "potenta financiara:  " << potentaFinanciara << "\n";
+		std::cout << "tip comportament:  " << comportament << std::endl;
+		std::cout << "potenta financiara:  " << potentaFinanciara << std::endl;
 	}
 };
 

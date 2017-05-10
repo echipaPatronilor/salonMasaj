@@ -6,7 +6,7 @@
 
 class Angajat : public Persoana
 {
- private:
+ protected:
 	 friend class AngajatFactory;
 	 std::string CNP;
 	 std::string telefon;

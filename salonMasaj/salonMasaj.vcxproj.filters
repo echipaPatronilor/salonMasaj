@@ -85,5 +85,8 @@
     <Text Include="event.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="masaje.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

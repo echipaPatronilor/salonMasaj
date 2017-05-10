@@ -5,7 +5,8 @@
 #include "patron.h"
 #include "client.h"
 #include "angajat.h"
-
+#include "masaj.h"
+#include "clientfactory.h"
 
 class ScriptManager
 {
@@ -18,14 +19,46 @@ class ScriptManager
 	 std::vector<Bodyguard*> bodyguards;
 	 std::vector<FemeieServici*> femeiServici;
 	 std::vector<Client*> clienti;
+	 std::vector<Masaj> masaje;
 	 //Patron* patron;
+
+	 ClientFactory clFactory;
+
+	 void incarcaMasaje() 
+	 {
+		
+		 std::ifstream fMasaje("masaje.txt");
+		 
+		 Masaj auxMasaj;
+		 Produs auxProdus;
+
+		 int nrProd;
+
+		 unsigned int durata, pret, tip;
+		 for (int i = 0; i < __SIZEOF_TIP_MASAJ; ++i)
+		 {
+			 fMasaje >> durata >> pret >> nrProd;
+			
+			 auxMasaj = Masaj(durata, pret, static_cast<TIP_MASAJ>(i));
+
+			 unsigned int cantitate, pret;
+			 std::string denumire;
+			for (int j = 0; j < nrProd; ++j) {
+
+				fMasaje >> denumire >> cantitate >> pret;
+				auxMasaj.addProdus(Produs(denumire, cantitate, pret));
+			}
+
+			masaje.push_back(auxMasaj);
+		}
+	 }
 
  public:
 
 	 ScriptManager()
 	 {
 		input.open("actionScript.txt");
-
+		this->incarcaMasaje();
 	 }
 
 	 ~ScriptManager()
@@ -192,9 +225,30 @@ class ScriptManager
 		}
 		else
 		{
-			if (action == "")
+			if (action == "venit")
 			{
+				std::cout << "Avem un client nou!" << std::endl;
+				clienti.push_back(clFactory.getClient());
+			}
 
+			if (action == "masaj")
+			{
+				int index;
+
+				input >> index;
+
+				clienti[index]->cereMasaj(masaje[Utils::random(0, masaje.size())]);
+			}
+
+			if (action == "plecat")
+			{
+				int index;
+
+				input >> index;
+
+				std::cout << "Clientul " << clienti[index]->getName() << " a plecat (speram) multumit" << std::endl;
+				std::swap(clienti[index], clienti[clienti.size() - 1]);
+				clienti.pop_back();
 			}
 		}
 
