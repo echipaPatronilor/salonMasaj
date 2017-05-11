@@ -237,7 +237,10 @@ class ScriptManager
 
 				input >> index;
 
-				clienti[index]->cereMasaj(masaje[Utils::random(0, masaje.size())]);
+				int indexMasaj = Utils::random(0, masaje.size());
+
+				clienti[index]->cereMasaj(masaje[indexMasaj]);
+				maseuze[Utils::random(0, maseuze.size())]->maseaza(*clienti[index], masaje[indexMasaj]);
 			}
 
 			if (action == "plecat")
