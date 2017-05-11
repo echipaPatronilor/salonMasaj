@@ -87,17 +87,17 @@ class ScriptManager
 					{
 					case ANGAJAT_MASEUZA:
 						maseuze.push_back(static_cast<Maseuza*>(Patron::getInstance().racoleaza(ANGAJAT_MASEUZA)));
-						Utils::printMessage("Am angajat maseuza ");
+						Logger::DoLogArgument("Am angajat maseuza ");
 						maseuze.back()->specificatii();
 						break;
 					case ANGAJAT_FEMEIESERVICI:
 						femeiServici.push_back(static_cast<FemeieServici*>(Patron::getInstance().racoleaza(ANGAJAT_FEMEIESERVICI)));
-						Utils::printMessage("Am angajat femeia de servici ");
+						Logger::DoLogArgument("Am angajat femeia de servici ");
 						femeiServici.back()->specificatii();
 						break;
 					case ANGAJAT_BODYGUARD:
 						bodyguards.push_back(static_cast<Bodyguard*>(Patron::getInstance().racoleaza(ANGAJAT_BODYGUARD)));
-						Utils::printMessage("Am angajat bodyguard-ul ");
+						Logger::DoLogArgument("Am angajat bodyguard-ul ");
 						bodyguards.back()->specificatii();
 						break;
 					default:
@@ -114,19 +114,19 @@ class ScriptManager
 					switch (static_cast<TIP_ANGAJAT>(tipAngajat))
 					{
 					case ANGAJAT_MASEUZA:
-						Utils::printMessage("Am concediat maseuza ");
+						Logger::DoLogArgument("Am concediat maseuza ");
 						maseuze[index]->specificatii();
 						std::swap(maseuze[index], maseuze[maseuze.size() - 1]);
 						maseuze.pop_back();
 						break;
 					case ANGAJAT_FEMEIESERVICI:
-						Utils::printMessage("Am concediat femeia de servici ");
+						Logger::DoLogArgument("Am concediat femeia de servici ");
 						femeiServici[index]->specificatii();
 						std::swap(femeiServici[index], femeiServici[femeiServici.size() - 1]);
 						femeiServici.pop_back();
 						break;
 					case ANGAJAT_BODYGUARD:
-						Utils::printMessage("Am concediat bodyguard-ul ");
+						Logger::DoLogArgument("Am concediat bodyguard-ul ");
 						bodyguards[index]->specificatii();
 						std::swap(bodyguards[index], bodyguards[bodyguards.size() - 1]);
 						bodyguards.pop_back();
@@ -227,7 +227,7 @@ class ScriptManager
 		{
 			if (action == "venit")
 			{
-				Utils::printMessage("Avem un client nou!\n");
+				Logger::DoLogArgument("Avem un client nou!\n");
 				clienti.push_back(clFactory.getClient());
 			}
 

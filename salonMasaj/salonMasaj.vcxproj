@@ -153,6 +153,7 @@
     <ClInclude Include="femeieservici.h" />
     <ClInclude Include="clientfactory.h" />
     <ClInclude Include="clientbuilder.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="masaj.h" />
     <ClInclude Include="maseuze.h" />
     <ClInclude Include="patron.h" />

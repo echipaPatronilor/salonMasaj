@@ -16,7 +16,7 @@ class Maseuza : public Angajat
 		// vom folosi proprietati ale *this-ului si ale client-ului pt poveste
 		// multithreading here
 
-		Utils::printMessage("Domnul " + client.getName() + " se va bucura de un masaj " + std::to_string(masaj.getTip()) + " in compania domnisoarei " + this->getName() + "\n");
+		Logger::DoLogArgument("Domnul " + client.getName() + " se va bucura de un masaj " + std::to_string(masaj.getTip()) + " in compania domnisoarei " + this->getName() + "\n");
 
 		//std::cout << "Domnul " << client.getName() << " se va bucura de un masaj " << masaj.getTip() << " in compania domnisoarei " << this->getName() << std::endl;
 

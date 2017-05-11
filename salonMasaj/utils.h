@@ -196,7 +196,7 @@ inline void Utils::setupConsole()
 	system("mode 650");
 }
 
-inline void Utils::printMessage(std::string mesaj)
+inline void Logger::DoLogArgument(std::string mesaj)
 {
 	Sleep(150);
 	std::cout << std::endl << mesaj;
