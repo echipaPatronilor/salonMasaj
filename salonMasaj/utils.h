@@ -197,10 +197,4 @@ inline void Utils::setupConsole()
 	system("mode 650");
 }
 
-inline void printMessage(std::string mesaj)
-{
-	Sleep(150);
-	std::cout << std::endl << mesaj;
-}
-
 #endif // !_UTILS_H_

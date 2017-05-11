@@ -13,22 +13,22 @@ class FemeieServici : public Angajat
 	 void daCuMatura(std::string& camera)
 	 {
 		 //std::cout << "Camera " << camera << " a fost maturata de " << this->name << std::endl;
-		 Logger::Write("Camera " + camera + " a fost maturata de " + this->name + "\n");
+		 Logger::getInstance().Write("Camera " + camera + " a fost maturata de " + this->name + "\n");
 	 }
 	 void spala(std::string& camera)
 	 {
 		 //std::cout << "Camera " << camera << " a fost spalata de " << this->name << std::endl;
-		 Logger::Write("Camera " + camera + " a fost spalata de " + this->name + "\n");
+		 Logger::getInstance().Write("Camera " + camera + " a fost spalata de " + this->name + "\n");
 	 }
 	 void curata(std::string& obiect)
 	 {
 		 //std::cout << this->name << " abia a reusit sa scoata jegul de pe " << obiect << std::endl;
-		 Logger::Write(this->name + " abia a reusit sa scoata jegul de pe " + obiect + "\n");
+		 Logger::getInstance().Write(this->name + " abia a reusit sa scoata jegul de pe " + obiect + "\n");
 	 }
 	 void schimbaLenjerie(std::string& camera)
 	 {
 		//std::cout << camera << " are acum lenjerie noua, cea veche era patata de... ulei" << std::endl;
-		 Logger::Write(camera + " are acum lenjerie noua, cea veche era patata de... ulei\n");
+		 Logger::getInstance().Write(camera + " are acum lenjerie noua, cea veche era patata de... ulei\n");
 	 }
 };
 

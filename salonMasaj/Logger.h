@@ -5,6 +5,9 @@
 class Logger
 {
 private:
+	Logger() {}
+	Logger(Logger const&);         // don't implement
+	void operator=(Logger const&); // don't implement
 
 	template<typename Arg1>
 	static std::ostringstream & DoLog(std::ostringstream & stream, const Arg1 & arg1)
@@ -19,24 +22,36 @@ private:
 	}
 
 public:
+	static Logger& getInstance()
+	{
+		static Logger instance;
+		return instance;
+	}
 
 	template<typename Arg1>
-	static std::string Write(const Arg1 & arg1)
-	{
-		auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1)).str();
-		std::cout << temp;
-		return temp;
-	}
+	std::string Write(const Arg1& arg1);
 
 	template<typename Arg1, typename... Args>
-	static std::string Write(const Arg1 & arg1, const Args&... args)
-	{
-		auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1, args...)).str();
-		std::cout << temp;
-		return temp;
-	}
-
+	std::string Write(const Arg1& arg1, const Args&... args);
 };
+
+template <typename Arg1>
+std::string Logger::Write(const Arg1& arg1)
+{
+	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1)).str();
+	Sleep(150);
+	std::cout << temp;
+	return temp;
+}
+
+template <typename Arg1, typename ... Args>
+std::string Logger::Write(const Arg1& arg1, const Args&... args)
+{
+	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1, args...)).str();
+	Sleep(150);
+	std::cout << temp;
+	return temp;
+}
 
 
 #endif // !_LOGGER_H_
