@@ -8,12 +8,12 @@ class Bodyguard : public Angajat
  public:
 	void bate(const Client& clientBulangiu)
 	{
-		Logger::DoLogArgument("Domnul " + clientBulangiu.getName() + " s-a dat smardoi iar acum ii este aplicata o corectie exemplara de catre " + this->getName() + "\n");
+		Logger::Write("Domnul " + clientBulangiu.getName() + " s-a dat smardoi iar acum ii este aplicata o corectie exemplara de catre " + this->getName() + "\n");
 		//std::cout << "Domnul " << clientBulangiu.getName() << " s-a dat smardoi iar acum ii este aplicata o corectie exemplara de catre " << this->getName() << std::endl;
 	}
 	void daAfara(const Client& clientNesimtit)
 	{
-		Logger::DoLogArgument("Domnul " + clientNesimtit.getName() + " a fost dat afara de catre " + this->getName() + " in urma unui comportament neadecvat fata de o domnisoara\n");
+		Logger::Write("Domnul " + clientNesimtit.getName() + " a fost dat afara de catre " + this->getName() + " in urma unui comportament neadecvat fata de o domnisoara\n");
 		//std::cout << "Domnul " << clientNesimtit.getName() << " a fost dat afara de catre " << this->getName() << " in urma unui comportament neadecvat fata de o domnisoara" << std::endl;
 	}
 };

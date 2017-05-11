@@ -21,7 +21,7 @@ private:
 public:
 
 	template<typename Arg1>
-	static std::string DoLogArgument(const Arg1 & arg1)
+	static std::string Write(const Arg1 & arg1)
 	{
 		auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1)).str();
 		std::cout << temp;
@@ -29,7 +29,7 @@ public:
 	}
 
 	template<typename Arg1, typename... Args>
-	static std::string DoLogArgument(const Arg1 & arg1, const Args&... args)
+	static std::string Write(const Arg1 & arg1, const Args&... args)
 	{
 		auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1, args...)).str();
 		std::cout << temp;
