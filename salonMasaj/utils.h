@@ -179,8 +179,10 @@ inline void Utils::eveniment()
 {
 	std::ifstream fin("event.txt");
 	char s[1000];
+	std::string finalPicture = "";
 	while (fin.getline(s, 1000))
-		Logger::getInstance().WriteLine(s);
+		finalPicture += std::string(s) + "\n";
+	Logger::getInstance().WriteLine(finalPicture);
 }
 
 inline void Utils::setupConsole()
