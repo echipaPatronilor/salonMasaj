@@ -1,3 +1,13 @@
+patron angajeaza 0
+patron angajeaza 0
+patron angajeaza 0
+patron angajeaza 1
+patron angajeaza 2
+patron angajeaza 2
+
+exit program
+
+
 <clock> <entity> <command>
 
 
