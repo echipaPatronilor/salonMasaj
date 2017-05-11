@@ -6,6 +6,13 @@ int main()
 	Utils::setupConsole();
 	Utils::seedRand();
 
+	ScriptManager god;
+
+	while (true)
+	{
+		god.doSomething();
+	}
+
 /*	cout << "Racolam maseuza\n";
 	Angajat * pers = Patron::getInstance().racoleaza(ANGAJAT_MASEUZA);
 	cout << "Am racolat " << pers->getTipAngajat() << " cu urmatoarele specificatii:\n";
@@ -16,9 +23,9 @@ int main()
 	pers = Patron::getInstance().racoleaza(ANGAJAT_BODYGUARD);
 	cout << "Am angajat " << pers->getTipAngajat() << " cu urmatoarele specificatii:\n";
 	pers->specificatii();
-	cout << "\n\n";*/
+	cout << "\n\n";
 
 	Utils::eveniment();
-	Utils::wait();
+	Utils::wait();*/
 	return 0;
 }

@@ -61,11 +61,6 @@ class ScriptManager
 		this->incarcaMasaje();
 	 }
 
-	 ~ScriptManager()
-	 {
-		input.close();
-	 }
-
 	 void doSomething()
 	 {
 		 int timeMomment;
@@ -73,6 +68,9 @@ class ScriptManager
 
 		input >> timeMomment >> entity >> action;
 		
+		if (entity == "exit")
+			exit(0);
+
 		if (entity != "client")
 		{
 			if (entity == "patron")
