@@ -188,8 +188,17 @@ inline void Utils::eveniment()
 	Logger::getInstance().WriteLine(finalPicture);
 }
 
+inline BOOL WINAPI HandlerRoutine(_In_ DWORD dwCtrlType)
+{
+	if (dwCtrlType == CTRL_C_EVENT)
+		exit(0);
+	return 0;
+}
+
 inline void Utils::setupConsole()
 {
+	SetConsoleCtrlHandler(HandlerRoutine, TRUE);
+
 	CONSOLE_FONT_INFOEX cfi;
 	cfi.cbSize = sizeof(cfi);
 	cfi.nFont = 0;
