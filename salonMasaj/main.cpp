@@ -1,5 +1,4 @@
 #include "scriptmanager.h"
-using namespace std;
 
 int main()
 {
@@ -13,7 +12,6 @@ int main()
 
 	std::cin >> readType;
 
-	Utils::wait();
 	Utils::clearscreen();
 
 	ScriptManager god(readType);
@@ -27,7 +25,7 @@ int main()
 	}
 	catch(int e)
 	{
-		cout << "An exception occurred. Exception Nr. " << e << '\n';
+		std::cout << "An exception occurred. Exception Nr. " << e << '\n';
 	}
 
 	/*cout << "Racolam maseuza\n";

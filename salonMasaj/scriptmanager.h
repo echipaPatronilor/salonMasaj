@@ -77,7 +77,9 @@ class ScriptManager
 
 	 ScriptManager(const std::string& readType)
 	 {
-		if (readType == "fisier")
+	 	this->readType = readType;
+
+		if (this->readType == "fisier")
 			input.open("actionScript.txt");
 		else {
 			
@@ -234,7 +236,8 @@ class ScriptManager
 					else
 						clientIndex = Utils::random(0, clienti.size());
 
-					maseuze[maseuzaIndex]->maseaza(*clienti[clientIndex], masaje[Utils::random(0, __SIZEOF_TIP_MASAJ)]);
+					if(clienti.size() && maseuze.size())
+						maseuze[maseuzaIndex]->maseaza(*clienti[clientIndex], masaje[Utils::random(0, __SIZEOF_TIP_MASAJ)]);
 				}
 			}
 
@@ -261,6 +264,8 @@ class ScriptManager
 						input >> clientIndex;
 					else
 						clientIndex = Utils::random(0, clienti.size());
+					
+					if (clienti.size())
 
 					bodyguards[bgIndex]->bate(*clienti[clientIndex]);
 				}
@@ -274,7 +279,8 @@ class ScriptManager
 					else
 						clientIndex = Utils::random(0, clienti.size());
 
-					bodyguards[bgIndex]->daAfara(*clienti[clientIndex]);
+					if(clienti.size())
+						bodyguards[bgIndex]->daAfara(*clienti[clientIndex]);
 				}
 			}
 
@@ -367,7 +373,10 @@ class ScriptManager
 
 				int indexMasaj = Utils::random(0, masaje.size());
 
+				if(clienti.size())
 				clienti[index]->cereMasaj(masaje[indexMasaj]);
+				
+				if (clienti.size() && maseuze.size())
 				maseuze[Utils::random(0, maseuze.size())]->maseaza(*clienti[index], masaje[indexMasaj]);
 			}
 

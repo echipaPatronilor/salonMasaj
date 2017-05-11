@@ -63,7 +63,7 @@ template <typename Arg1>
 std::string Logger::WriteLine(const Arg1& arg1)
 {
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1)).str();
-	Sleep(500);
+	Sleep(100);
 	std::cout << temp << "\n";
 	return temp;
 }
@@ -72,7 +72,7 @@ template <typename Arg1, typename ... Args>
 std::string Logger::WriteLine(const Arg1& arg1, const Args&... args)
 {
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1, args...)).str();
-	Sleep(500);
+	Sleep(100);
 	std::cout << temp << "\n";
 	return temp;
 }
