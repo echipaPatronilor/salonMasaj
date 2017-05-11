@@ -2,22 +2,23 @@ patron angajeaza 0
 patron angajeaza 0
 patron angajeaza 0
 patron angajeaza 1
+patron angajeaza 1
 patron angajeaza 2
 patron angajeaza 2
+client venit
+client venit
+client masaj 0
+client masaj 1
+client plecat 1
+client plecat 0
+femeieserv matura 0 camera3
+femeieserv spala 1 camera1
+client venit
+client masaj 0 
+bodyguard bate 0 0
+client plecat 0
+client venit
+client masaj 0
+bodyguard daafara 0 0
 
 exit program
-
-
-<clock> <entity> <command>
-
-
-clock = non negative integer
-
-entities = maseuza, patron, bodyguard, femeieservici, client
-
-commands = for all -> "spawn"
-			masueza -> "maseaza <client> <tip_masaj>"
-			patron -> "angajeaza", "concediaza"
-			client -> "vine", "pleaca", "comanda_masaj <tip>", "plateste", "face_scandal", "actiune_neprevazuta <maseuza>"
-			bodyguard -> "bate", "scoate_afara", "verifica"
-			femeieservici -> "curata"
