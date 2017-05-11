@@ -16,6 +16,7 @@
 #include <conio.h>
 #include <windows.h>
 #include <Wincon.h>
+#include "Logger.h"
 
 class Utils 
 {
@@ -196,7 +197,7 @@ inline void Utils::setupConsole()
 	system("mode 650");
 }
 
-inline void Logger::DoLogArgument(std::string mesaj)
+inline void printMessage(std::string mesaj)
 {
 	Sleep(150);
 	std::cout << std::endl << mesaj;

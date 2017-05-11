@@ -7,6 +7,7 @@
 #include "angajatbuilder.h"
 #include "client.h"
 #include "masaj.h"
+#include "Logger.h"
 
 class Maseuza : public Angajat
 {
