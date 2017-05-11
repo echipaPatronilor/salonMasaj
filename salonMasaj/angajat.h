@@ -26,6 +26,7 @@ class Angajat : public Persoana
 		 std::cout << "telefon:  " << telefon << "\n";
 		 std::cout << "salariu:  " << salariu << "\n";
 		 std::cout << "ore saptamana:  " << oreSaptamanal << "\n";
+		 std::cout << "\n\n";
 	 }
 };
 

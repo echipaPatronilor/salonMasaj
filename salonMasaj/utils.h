@@ -35,6 +35,7 @@ public:
 	static std::string randomName(TIP_SEX);
 	static void seedRand();
 	static void eveniment();
+	static void printMessage(std::string);
 	static void setupConsole();
 };
 
@@ -193,6 +194,12 @@ inline void Utils::setupConsole()
 	std::wcscpy(cfi.FaceName, L"Consolas");
 	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
 	system("mode 650");
+}
+
+inline void Utils::printMessage(std::string mesaj)
+{
+	Sleep(150);
+	std::cout << std::endl << mesaj;
 }
 
 #endif // !_UTILS_H_

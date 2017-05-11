@@ -10,21 +10,25 @@ class FemeieServici : public Angajat
 
  public:
 
-	 void daCuMatura(std::string camera)
+	 void daCuMatura(std::string& camera)
 	 {
-		 std::cout << "Camera " << camera << " a fost maturata de " << this->name << std::endl;
+		 //std::cout << "Camera " << camera << " a fost maturata de " << this->name << std::endl;
+		 Utils::printMessage("Camera " + camera + " a fost maturata de " + this->name + "\n");
 	 }
-	 void spala(std::string camera)
+	 void spala(std::string& camera)
 	 {
-		 std::cout << "Camera " << camera << " a fost spalata de " << this->name << std::endl;
+		 //std::cout << "Camera " << camera << " a fost spalata de " << this->name << std::endl;
+		 Utils::printMessage("Camera " + camera + " a fost spalata de " + this->name + "\n");
 	 }
-	 void curata(std::string obiect)
+	 void curata(std::string& obiect)
 	 {
-		 std::cout << this->name << " abia a reusit sa scoata jegul de pe " << obiect << std::endl;
+		 //std::cout << this->name << " abia a reusit sa scoata jegul de pe " << obiect << std::endl;
+		 Utils::printMessage(this->name + " abia a reusit sa scoata jegul de pe " + obiect + "\n");
 	 }
-	 void schimbaLenjerie(std::string camera)
+	 void schimbaLenjerie(std::string& camera)
 	 {
-		std::cout << camera << " are acum lenjerie noua, cea veche era patata de... ulei" << std::endl;
+		//std::cout << camera << " are acum lenjerie noua, cea veche era patata de... ulei" << std::endl;
+		 Utils::printMessage(camera + " are acum lenjerie noua, cea veche era patata de... ulei\n");
 	 }
 };
 

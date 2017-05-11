@@ -66,11 +66,13 @@ class ScriptManager
 		 int timeMomment;
 		 std::string entity, action;
 
-		input >> timeMomment >> entity >> action;
+		input /*>> timeMomment*/ >> entity >> action;
 		
 		if (entity == "exit")
+		{
+			Utils::wait();
 			exit(0);
-
+		}
 		if (entity != "client")
 		{
 			if (entity == "patron")
@@ -85,17 +87,17 @@ class ScriptManager
 					{
 					case ANGAJAT_MASEUZA:
 						maseuze.push_back(static_cast<Maseuza*>(Patron::getInstance().racoleaza(ANGAJAT_MASEUZA)));
-						std::cout << "Am angajat maseuza ";
+						Utils::printMessage("Am angajat maseuza ");
 						maseuze.back()->specificatii();
 						break;
 					case ANGAJAT_FEMEIESERVICI:
 						femeiServici.push_back(static_cast<FemeieServici*>(Patron::getInstance().racoleaza(ANGAJAT_FEMEIESERVICI)));
-						std::cout << "Am angajat femeia de servici ";
+						Utils::printMessage("Am angajat femeia de servici ");
 						femeiServici.back()->specificatii();
 						break;
 					case ANGAJAT_BODYGUARD:
 						bodyguards.push_back(static_cast<Bodyguard*>(Patron::getInstance().racoleaza(ANGAJAT_BODYGUARD)));
-						std::cout << "Am angajat bodyguard-ul ";
+						Utils::printMessage("Am angajat bodyguard-ul ");
 						bodyguards.back()->specificatii();
 						break;
 					default:
@@ -112,19 +114,19 @@ class ScriptManager
 					switch (static_cast<TIP_ANGAJAT>(tipAngajat))
 					{
 					case ANGAJAT_MASEUZA:
-						std::cout << "Am concediat maseuza ";
+						Utils::printMessage("Am concediat maseuza ");
 						maseuze[index]->specificatii();
 						std::swap(maseuze[index], maseuze[maseuze.size() - 1]);
 						maseuze.pop_back();
 						break;
 					case ANGAJAT_FEMEIESERVICI:
-						std::cout << "Am concediat femeia de servici ";
+						Utils::printMessage("Am concediat femeia de servici ");
 						femeiServici[index]->specificatii();
 						std::swap(femeiServici[index], femeiServici[femeiServici.size() - 1]);
 						femeiServici.pop_back();
 						break;
 					case ANGAJAT_BODYGUARD:
-						std::cout << "Am concediat bodyguard-ul ";
+						Utils::printMessage("Am concediat bodyguard-ul ");
 						bodyguards[index]->specificatii();
 						std::swap(bodyguards[index], bodyguards[bodyguards.size() - 1]);
 						bodyguards.pop_back();
@@ -148,7 +150,7 @@ class ScriptManager
 					int clientIndex;
 					input >> clientIndex;
 
-					//maseuze[maseuzaIndex]->maseaza(*clienti[clientIndex], static_cast<>(Utils::random(0, __SIZEOF_TIP_MASAJ)));
+					maseuze[maseuzaIndex]->maseaza(*clienti[clientIndex], masaje[Utils::random(0, __SIZEOF_TIP_MASAJ)]);
 				}
 			}
 
@@ -225,7 +227,7 @@ class ScriptManager
 		{
 			if (action == "venit")
 			{
-				std::cout << "Avem un client nou!" << std::endl;
+				Utils::printMessage("Avem un client nou!\n");
 				clienti.push_back(clFactory.getClient());
 			}
 
