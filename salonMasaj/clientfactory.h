@@ -11,6 +11,11 @@ class ClientFactory
 
 public:
 
+	ClientFactory()
+	{
+		builder = new ClientBuilder();
+	}
+
 	Client* getClient() const
 	{
 		Client* client = new Client();
