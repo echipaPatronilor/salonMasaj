@@ -21,7 +21,7 @@ public:
 	void cereMasaj(const Masaj& masaj)
 	{
 
-		std::cout << "Domnul " << this->getName() << " a cerut un masaj " << masaj.getTip() << std::endl;
+		Logger::getInstance().WriteLine("Domnul ",this->getName(), " a cerut un masaj ", masaj.getTip());
 		int eveniment = Utils::random(1, 4);
 		if (eveniment % 2 == 0)
 			Utils::eveniment();
@@ -30,8 +30,8 @@ public:
 	void specificatii() const
 	{
 		Persoana::specificatii();
-		std::cout << "tip comportament:  " << comportament << std::endl;
-		std::cout << "potenta financiara:  " << potentaFinanciara << std::endl;
+		Logger::getInstance().WriteLine("tip comportament:  ",comportament);
+		Logger::getInstance().WriteLine("potenta financiara:  ",potentaFinanciara);
 	}
 };
 

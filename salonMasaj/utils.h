@@ -180,7 +180,7 @@ inline void Utils::eveniment()
 	std::ifstream fin("event.txt");
 	char s[1000];
 	while (fin.getline(s, 1000))
-		std::cout << s << '\n';
+		Logger::getInstance().WriteLine(s);
 }
 
 inline void Utils::setupConsole()

@@ -10,25 +10,21 @@ class FemeieServici : public Angajat
 
  public:
 
-	 void daCuMatura(std::string& camera)
+	 void daCuMatura(std::string& camera) const
 	 {
-		 //std::cout << "Camera " << camera << " a fost maturata de " << this->name << std::endl;
-		 Logger::getInstance().Write("Camera " + camera + " a fost maturata de " + this->name + "\n");
+		 Logger::getInstance().WriteLine("Camera ", camera, " a fost maturata de ", this->name);
 	 }
-	 void spala(std::string& camera)
+	 void spala(std::string& camera) const
 	 {
-		 //std::cout << "Camera " << camera << " a fost spalata de " << this->name << std::endl;
-		 Logger::getInstance().Write("Camera " + camera + " a fost spalata de " + this->name + "\n");
+		 Logger::getInstance().WriteLine("Camera ", camera, " a fost spalata de ", this->name);
 	 }
-	 void curata(std::string& obiect)
+	 void curata(std::string& obiect) const
 	 {
-		 //std::cout << this->name << " abia a reusit sa scoata jegul de pe " << obiect << std::endl;
-		 Logger::getInstance().Write(this->name + " abia a reusit sa scoata jegul de pe " + obiect + "\n");
+		 Logger::getInstance().WriteLine(this->name, " abia a reusit sa scoata jegul de pe ", obiect);
 	 }
-	 void schimbaLenjerie(std::string& camera)
+	 void schimbaLenjerie(std::string& camera) const
 	 {
-		//std::cout << camera << " are acum lenjerie noua, cea veche era patata de... ulei" << std::endl;
-		 Logger::getInstance().Write(camera + " are acum lenjerie noua, cea veche era patata de... ulei\n");
+		 Logger::getInstance().WriteLine(camera, " are acum lenjerie noua, cea veche era patata de... ulei");
 	 }
 };
 

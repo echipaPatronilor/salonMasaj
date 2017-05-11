@@ -6,15 +6,22 @@
 class Bodyguard : public Angajat
 {
  public:
-	void bate(const Client& clientBulangiu)
+	void bate(const Client& clientBulangiu) const
 	{
-		Logger::getInstance().Write("Domnul " + clientBulangiu.getName() + " s-a dat smardoi iar acum ii este aplicata o corectie exemplara de catre " + this->getName() + "\n");
-		//std::cout << "Domnul " << clientBulangiu.getName() << " s-a dat smardoi iar acum ii este aplicata o corectie exemplara de catre " << this->getName() << std::endl;
+		Logger::getInstance().WriteLine(
+			"Domnul ",
+			clientBulangiu.getName(),
+			" s-a dat smardoi iar acum ii este aplicata o corectie exemplara de catre ",
+			this->getName());
 	}
-	void daAfara(const Client& clientNesimtit)
+	void daAfara(const Client& clientNesimtit) const
 	{
-		Logger::getInstance().Write("Domnul " + clientNesimtit.getName() + " a fost dat afara de catre " + this->getName() + " in urma unui comportament neadecvat fata de o domnisoara\n");
-		//std::cout << "Domnul " << clientNesimtit.getName() << " a fost dat afara de catre " << this->getName() << " in urma unui comportament neadecvat fata de o domnisoara" << std::endl;
+		Logger::getInstance().WriteLine(
+			"Domnul ",
+			clientNesimtit.getName(),
+			" a fost dat afara de catre ",
+			this->getName(),
+			" in urma unui comportament neadecvat fata de o domnisoara");
 	}
 };
 

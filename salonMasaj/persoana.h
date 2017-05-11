@@ -31,12 +31,12 @@ public:
 
 inline void Persoana::specificatii() const
 {
-	std::cout << "nume:  " << name << "\n";
-	std::cout << "varsta:  " << age << "\n";
-	std::cout << "sex:  " << sex << "\n";
-	std::cout << "piele:  " << skinType << "\n";
-	std::cout << "trup:  " << bodyType << "\n";
-	std::cout << "culoare par:  " << hairType.first << "\n";
-	std::cout << "lungime par:  " << hairType.second << "\n";
+	Logger::getInstance().WriteLine("nume:  ",name);
+	Logger::getInstance().WriteLine("varsta:  ", age);
+	Logger::getInstance().WriteLine("sex:  ", sex);
+	Logger::getInstance().WriteLine("piele:  ", skinType);
+	Logger::getInstance().WriteLine("trup:  ", bodyType);
+	Logger::getInstance().WriteLine("culoare par:  ", hairType.first);
+	Logger::getInstance().WriteLine("lungime par:  ", hairType.second);
 }
 #endif // !_PERSOANA_H_

@@ -246,7 +246,7 @@ class ScriptManager
 
 				input >> index;
 
-				std::cout << "Clientul " << clienti[index]->getName() << " a plecat (speram) multumit" << std::endl;
+				Logger::getInstance().WriteLine("Clientul ",clienti[index]->getName()," a plecat (speram) multumit");
 				std::swap(clienti[index], clienti[clienti.size() - 1]);
 				clienti.pop_back();
 			}

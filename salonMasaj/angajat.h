@@ -22,11 +22,12 @@ class Angajat : public Persoana
 	 void specificatii() const
 	 {
 		 Persoana::specificatii();
-		 std::cout << "CNP:  " << CNP << "\n";
-		 std::cout << "telefon:  " << telefon << "\n";
-		 std::cout << "salariu:  " << salariu << "\n";
-		 std::cout << "ore saptamana:  " << oreSaptamanal << "\n";
-		 std::cout << "\n\n";
+		 
+		 Logger::getInstance().WriteLine("CNP:  ",CNP);
+		 Logger::getInstance().WriteLine("telefon:  ",telefon);
+		 Logger::getInstance().WriteLine("salariu:  ",salariu);
+		 Logger::getInstance().WriteLine("ore saptamana:  ",oreSaptamanal);
+		 Logger::getInstance().WriteLine("\n");
 	 }
 };
 

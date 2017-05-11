@@ -33,6 +33,12 @@ public:
 
 	template<typename Arg1, typename... Args>
 	std::string Write(const Arg1& arg1, const Args&... args);
+
+	template<typename Arg1>
+	std::string WriteLine(const Arg1& arg1);
+
+	template<typename Arg1, typename... Args>
+	std::string WriteLine(const Arg1& arg1, const Args&... args);
 };
 
 template <typename Arg1>
@@ -53,5 +59,22 @@ std::string Logger::Write(const Arg1& arg1, const Args&... args)
 	return temp;
 }
 
+template <typename Arg1>
+std::string Logger::WriteLine(const Arg1& arg1)
+{
+	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1)).str();
+	Sleep(150);
+	std::cout << temp << "\n";
+	return temp;
+}
+
+template <typename Arg1, typename ... Args>
+std::string Logger::WriteLine(const Arg1& arg1, const Args&... args)
+{
+	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1, args...)).str();
+	Sleep(150);
+	std::cout << temp << "\n";
+	return temp;
+}
 
 #endif // !_LOGGER_H_
