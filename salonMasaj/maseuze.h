@@ -21,7 +21,7 @@ class Maseuza : public Angajat
 			"Domnul ",
 			client.getName(),
 			" se va bucura de un masaj ",
-			std::to_string(masaj.getTip()),
+			masaj.getTip(),
 			" in compania domnisoarei ",
 			this->getName());
 
