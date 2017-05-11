@@ -228,6 +228,7 @@ class ScriptManager
 				{
 					int clientIndex;
 
+
 					if (readType == "fisier")
 						input >> clientIndex;
 					else
