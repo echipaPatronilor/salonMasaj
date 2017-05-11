@@ -6,7 +6,17 @@ int main()
 	Utils::setupConsole();
 	Utils::seedRand();
 
-	ScriptManager god;
+	std::string readType;
+
+	Logger::getInstance().WriteLine("pentru generarea automata a povestii tastati \"automat\"");
+	Logger::getInstance().WriteLine("pentru generare manuala a povestii tastati \"fisier\"\n");
+
+	std::cin >> readType;
+
+	Utils::wait();
+	Utils::clearscreen();
+
+	ScriptManager god(readType);
 
 	while (true)
 	{

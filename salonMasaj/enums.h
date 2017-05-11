@@ -185,7 +185,7 @@ std::ostream& operator<<(std::ostream& out, const enum TIP_RASA value) {
 }
 
 
-const int __SIZEOF_TIP_PERSOANA = 3;
+const int __SIZEOF_TIP_ANGAJAT = 3;
 enum TIP_ANGAJAT
 {
 	ANGAJAT_MASEUZA,

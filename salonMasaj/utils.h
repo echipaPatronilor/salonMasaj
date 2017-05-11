@@ -53,6 +53,9 @@ inline void Utils::clearscreen()
 
 inline int Utils::random(int lower, int upper)
 {
+	if (upper == lower && upper == 0)
+		return -1;
+
 	return (rand() % (upper - lower)) + lower;
 }
 
