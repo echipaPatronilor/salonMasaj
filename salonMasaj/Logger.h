@@ -6,8 +6,11 @@ class Logger
 {
 private:
 	const int SleepTime = 200;
+	const std::string loggerFileName = "logs.txt";
 
-	Logger() {}
+	std::ofstream *out;
+
+	Logger() { out = new std::ofstream(loggerFileName); }
 	Logger(Logger const&);         // don't implement
 	void operator=(Logger const&); // don't implement
 
@@ -49,6 +52,7 @@ std::string Logger::Write(const Arg1& arg1)
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1)).str();
 	Sleep(SleepTime);
 	std::cout << temp;
+	(*out) << temp;
 	return temp;
 }
 
@@ -58,6 +62,7 @@ std::string Logger::Write(const Arg1& arg1, const Args&... args)
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1, args...)).str();
 	Sleep(SleepTime);
 	std::cout << temp;
+	(*out) << temp;
 	return temp;
 }
 
@@ -67,6 +72,7 @@ std::string Logger::WriteLine(const Arg1& arg1)
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1)).str();
 	Sleep(SleepTime);
 	std::cout << temp << "\n";
+	(*out) << temp << "\n";
 	return temp;
 }
 
@@ -76,6 +82,7 @@ std::string Logger::WriteLine(const Arg1& arg1, const Args&... args)
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1, args...)).str();
 	Sleep(SleepTime);
 	std::cout << temp << "\n";
+	(*out) << temp << "\n";
 	return temp;
 }
 
