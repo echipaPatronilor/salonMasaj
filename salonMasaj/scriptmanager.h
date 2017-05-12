@@ -113,8 +113,6 @@ class ScriptManager
 		 else
 			 entity = entities[min(Utils::random(0, 7), 4)];
 
-		 std::cerr << entity << " ";
-
 		if (entity == "exit")
 		{
 			Utils::wait();
@@ -362,7 +360,6 @@ class ScriptManager
 			{
 				Logger::getInstance().Write("Avem un client nou!\n");
 				clienti.push_back(clFactory.getClient());
-				std::cerr << "client adaugat cu succes!" << std::endl;
 			}
 
 			if (action == "masaj")
@@ -400,7 +397,6 @@ class ScriptManager
 				}
 			}
 		}
-		std::cerr << action << std::endl;
 	 }
 };
 

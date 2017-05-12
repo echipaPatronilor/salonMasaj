@@ -37,7 +37,7 @@ public:
 	static void seedRand();
 	static void eveniment();
 	static void printMessage(std::string);
-	static void setupConsole();
+	static void setupConsole(int fontSize);
 };
 
 
@@ -180,12 +180,15 @@ inline void Utils::seedRand()
 
 inline void Utils::eveniment()
 {
+	Utils::setupConsole(12);
 	std::ifstream fin("event.txt");
 	char s[1000];
 	std::string finalPicture = "";
 	while (fin.getline(s, 1000))
 		finalPicture += std::string(s) + "\n";
 	Logger::getInstance().WriteLine(finalPicture);
+	Sleep(2000);
+	Utils::setupConsole(24);
 }
 
 inline BOOL WINAPI HandlerRoutine(_In_ DWORD dwCtrlType)
@@ -195,7 +198,7 @@ inline BOOL WINAPI HandlerRoutine(_In_ DWORD dwCtrlType)
 	return 0;
 }
 
-inline void Utils::setupConsole()
+inline void Utils::setupConsole(int fontSize)
 {
 	SetConsoleCtrlHandler(HandlerRoutine, TRUE);
 
@@ -203,7 +206,7 @@ inline void Utils::setupConsole()
 	cfi.cbSize = sizeof(cfi);
 	cfi.nFont = 0;
 	cfi.dwFontSize.X = 0;
-	cfi.dwFontSize.Y = 12;
+	cfi.dwFontSize.Y = fontSize;
 	cfi.FontFamily = FF_DONTCARE;
 	cfi.FontWeight = FW_NORMAL;
 	std::wcscpy(cfi.FaceName, L"Consolas");

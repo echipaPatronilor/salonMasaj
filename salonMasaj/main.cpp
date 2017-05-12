@@ -2,7 +2,7 @@
 
 int main()
 {
-	Utils::setupConsole();
+	Utils::setupConsole(24);
 	Utils::seedRand();
 
 	std::string readType;
