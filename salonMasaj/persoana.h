@@ -20,7 +20,6 @@ protected:
 	std::pair<CULOARE_PAR, LUNGIME_PAR> hairType;
 
 public:
-	
 	void specificatii() const;
 
 	std::string getName() const

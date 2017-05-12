@@ -5,6 +5,8 @@
 class Logger
 {
 private:
+	const int SleepTime = 200;
+
 	Logger() {}
 	Logger(Logger const&);         // don't implement
 	void operator=(Logger const&); // don't implement
@@ -45,7 +47,7 @@ template <typename Arg1>
 std::string Logger::Write(const Arg1& arg1)
 {
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1)).str();
-	Sleep(150);
+	Sleep(SleepTime);
 	std::cout << temp;
 	return temp;
 }
@@ -54,7 +56,7 @@ template <typename Arg1, typename ... Args>
 std::string Logger::Write(const Arg1& arg1, const Args&... args)
 {
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1, args...)).str();
-	Sleep(150);
+	Sleep(SleepTime);
 	std::cout << temp;
 	return temp;
 }
@@ -63,7 +65,7 @@ template <typename Arg1>
 std::string Logger::WriteLine(const Arg1& arg1)
 {
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1)).str();
-	Sleep(100);
+	Sleep(SleepTime);
 	std::cout << temp << "\n";
 	return temp;
 }
@@ -72,7 +74,7 @@ template <typename Arg1, typename ... Args>
 std::string Logger::WriteLine(const Arg1& arg1, const Args&... args)
 {
 	auto temp = static_cast<std::ostringstream&>(DoLog(std::ostringstream(), arg1, args...)).str();
-	Sleep(100);
+	Sleep(SleepTime);
 	std::cout << temp << "\n";
 	return temp;
 }

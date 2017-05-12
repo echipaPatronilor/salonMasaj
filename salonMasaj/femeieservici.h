@@ -12,15 +12,15 @@ class FemeieServici : public Angajat
 
 	 void daCuMatura(std::string& camera) const
 	 {
-		 Logger::getInstance().WriteLine("Camera ", camera, " a fost maturata de ", this->name);
+		 Logger::getInstance().WriteLine("Camera ", camera, " a fost maturata de ", this->getName());
 	 }
 	 void spala(std::string& camera) const
 	 {
-		 Logger::getInstance().WriteLine("Camera ", camera, " a fost spalata de ", this->name);
+		 Logger::getInstance().WriteLine("Camera ", camera, " a fost spalata de ", this->getName());
 	 }
 	 void curata(std::string& obiect) const
 	 {
-		 Logger::getInstance().WriteLine(this->name, " abia a reusit sa scoata jegul de pe ", obiect);
+		 Logger::getInstance().WriteLine(this->getName(), " abia a reusit sa scoata jegul de pe ", obiect);
 	 }
 	 void schimbaLenjerie(std::string& camera) const
 	 {

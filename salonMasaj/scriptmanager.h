@@ -111,7 +111,9 @@ class ScriptManager
 		 if (readType == "fisier")
 			 input /*>> timeMomment*/ >> entity >> action;
 		 else
-			 entity = entities[Utils::random(0, entities.size() + 1)];
+			 entity = entities[min(Utils::random(0, 7), 4)];
+
+		 std::cerr << entity << " ";
 
 		if (entity == "exit")
 		{
@@ -123,7 +125,7 @@ class ScriptManager
 			if (entity == "patron")
 			{
 				if (readType != "fisier")
-					action = patronTasks[Utils::random(0, patronTasks.size())];
+					action = patronTasks[Utils::random(0, 3) % 2];
 
 				if (action == "angajeaza")
 				{
@@ -360,6 +362,7 @@ class ScriptManager
 			{
 				Logger::getInstance().Write("Avem un client nou!\n");
 				clienti.push_back(clFactory.getClient());
+				std::cerr << "client adaugat cu succes!" << std::endl;
 			}
 
 			if (action == "masaj")
@@ -374,10 +377,10 @@ class ScriptManager
 				int indexMasaj = Utils::random(0, masaje.size());
 
 				if(clienti.size())
-				clienti[index]->cereMasaj(masaje[indexMasaj]);
+					clienti[index]->cereMasaj(masaje[indexMasaj]);
 				
 				if (clienti.size() && maseuze.size())
-				maseuze[Utils::random(0, maseuze.size())]->maseaza(*clienti[index], masaje[indexMasaj]);
+					maseuze[Utils::random(0, maseuze.size())]->maseaza(*clienti[index], masaje[indexMasaj]);
 			}
 
 			if (action == "plecat")
@@ -397,7 +400,7 @@ class ScriptManager
 				}
 			}
 		}
-
+		std::cerr << action << std::endl;
 	 }
 };
 
