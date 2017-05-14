@@ -8,6 +8,7 @@
 #include "masaj.h"
 #include "clientfactory.h"
 
+
 const std::vector<std::string> entities = {"patron",
 										   "maseuza",
 										   "bodyguard",
@@ -105,13 +106,17 @@ class ScriptManager
 
 	 void doSomething()
 	 {
-		 int timeMomment;
+		 
 		 std::string entity, action;
 
 		 if (readType == "fisier")
-			 input /*>> timeMomment*/ >> entity >> action;
+			 input >> entity >> action;
 		 else
-			 entity = entities[min(Utils::random(0, 7), 4)];
+		 {
+			 int entIndex = Utils::random(0, 7);
+			 entIndex = min(entIndex, 4);
+			 entity = entities[entIndex];
+		 }
 
 		if (entity == "exit")
 		{
@@ -171,12 +176,15 @@ class ScriptManager
 						case 0:
 							index = Utils::random(0, maseuze.size());
 							break;
+						
 						case 1:
 							index = Utils::random(0, femeiServici.size());
 							break;
+						
 						case 2:
 							index = Utils::random(0, bodyguards.size());
 							break;
+						
 						default:
 							break;
 						}
@@ -192,18 +200,21 @@ class ScriptManager
 							std::swap(maseuze[index], maseuze[maseuze.size() - 1]);
 							maseuze.pop_back();
 							break;
-						case ANGAJAT_FEMEIESERVICI:
+
+						case ANGAJAT_FEMEIESERVICI:		
 							Logger::getInstance().Write("Am concediat femeia de servici ");
 							femeiServici[index]->specificatii();
 							std::swap(femeiServici[index], femeiServici[femeiServici.size() - 1]);
 							femeiServici.pop_back();
 							break;
+
 						case ANGAJAT_BODYGUARD:
 							Logger::getInstance().Write("Am concediat bodyguard-ul ");
 							bodyguards[index]->specificatii();
 							std::swap(bodyguards[index], bodyguards[bodyguards.size() - 1]);
 							bodyguards.pop_back();
 							break;
+
 						default:
 							break;
 						}
@@ -266,8 +277,7 @@ class ScriptManager
 						clientIndex = Utils::random(0, clienti.size());
 					
 					if (clienti.size())
-
-					bodyguards[bgIndex]->bate(*clienti[clientIndex]);
+						bodyguards[bgIndex]->bate(*clienti[clientIndex]);
 				}
 
 				if (action == "daafara")
@@ -332,7 +342,7 @@ class ScriptManager
 						input >> obiect;
 					else
 						obiect = obiecte[Utils::random(0, obiecte.size())];
-
+					
 					femeiServici[index]->curata(obiect);
 
 				}
@@ -389,15 +399,17 @@ class ScriptManager
 				else
 					index = Utils::random(0, clienti.size());
 
-				if (index >= 0)
+				if (index >= 0 && index < clienti.size())
 				{
 					Logger::getInstance().WriteLine("Clientul ", clienti[index]->getName(), " a plecat (speram) multumit");
 					std::swap(clienti[index], clienti[clienti.size() - 1]);
 					clienti.pop_back();
+
 				}
 			}
 		}
 	 }
+	 
 };
 
 

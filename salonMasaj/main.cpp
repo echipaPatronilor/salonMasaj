@@ -16,17 +16,17 @@ int main()
 
 	ScriptManager god(readType);
 
-	try 
+	try
 	{
 		while (true)
 		{
 			god.doSomething();
 		}
 	}
-	catch(int e)
+	catch (int e)
 	{
 		std::cout << "An exception occurred. Exception Nr. " << e << '\n';
-	}
+	}	
 
 	/*cout << "Racolam maseuza\n";
 	Angajat * pers = Patron::getInstance().racoleaza(ANGAJAT_MASEUZA);
